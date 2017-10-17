@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="距离上次的承诺已经过去了1月，今天就来补上上回的坑。说实话，现在大部分公众号已经创作乏力，我估摸着已经1个月没有点开关注的公众号了，因为在上一个月我就发现，已经没有什么能够让我虎躯一震，要知道在以前我可是每天刷新，不断收藏的，要不然印象笔记里面也不会有1万多条笔记，以前不知道如何分享，权当做自己的精囊，写错了是锦囊，都是在师妹困难的时候发挥作用，而现在，微信允许跨公众号内插帖子链接，今天我就要把他">
+<meta property="og:type" content="article">
+<meta property="og:title" content="那些我学过的科研数据库">
+<meta property="og:url" content="https://guo2sky.github.io/2017/10/17/03-database-learning/index.html">
+<meta property="og:site_name" content="果子学生信">
+<meta property="og:description" content="距离上次的承诺已经过去了1月，今天就来补上上回的坑。说实话，现在大部分公众号已经创作乏力，我估摸着已经1个月没有点开关注的公众号了，因为在上一个月我就发现，已经没有什么能够让我虎躯一震，要知道在以前我可是每天刷新，不断收藏的，要不然印象笔记里面也不会有1万多条笔记，以前不知道如何分享，权当做自己的精囊，写错了是锦囊，都是在师妹困难的时候发挥作用，而现在，微信允许跨公众号内插帖子链接，今天我就要把他">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-10-17T12:50:54.771Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="那些我学过的科研数据库">
+<meta name="twitter:description" content="距离上次的承诺已经过去了1月，今天就来补上上回的坑。说实话，现在大部分公众号已经创作乏力，我估摸着已经1个月没有点开关注的公众号了，因为在上一个月我就发现，已经没有什么能够让我虎躯一震，要知道在以前我可是每天刷新，不断收藏的，要不然印象笔记里面也不会有1万多条笔记，以前不知道如何分享，权当做自己的精囊，写错了是锦囊，都是在师妹困难的时候发挥作用，而现在，微信允许跨公众号内插帖子链接，今天我就要把他">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://guo2sky.github.io/2017/10/17/03-database-learning/"/>
+
+
+
+
+
+  <title>那些我学过的科研数据库 | 果子学生信</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">果子学生信</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://guo2sky.github.io/2017/10/17/03-database-learning/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shipeng Guo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="果子学生信">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">那些我学过的科研数据库</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-17T20:49:59+08:00">
+                2017-10-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>距离上次的承诺已经过去了1月，今天就来补上上回的坑。<br>说实话，现在大部分公众号已经创作乏力，我估摸着已经1个月没有点开关注的公众号了，因为在上一个月我就发现，<br>已经没有什么能够让我虎躯一震，要知道在以前我可是每天刷新，不断收藏的，要不然印象笔记里面也不会有1万多条笔记，以前不知道如何分享，权当做自己的精囊，写错了是锦囊，都是在师妹困难的时候发挥作用，而现在，微信允许跨公众号内插帖子链接，今天我就要把他们全部放出来。</p>
+<p>我要申明一点，如果你把这个帖子看完后，还觉得自己拿不到课题，发不了文章，我觉得，你可能需要换个团队，或者换个脑子。<br>我就是掌握了这些数据库的用法，才变成了现在的我。而我学习编程，是为了更加自由。</p>
+<p>需要强调的是，这里面大部分数据库我都使用过，但是遗憾的是，当年我并没有记录使用的感受，以及各个帖子对于新手的友好程度，甚至在使用<br>某些数据库时，干脆自己把使用文档看了一遍，不过，没关系，你只要知道，想到达到什么目的该用什么数据库就可以了。</p>
+<p>对于TCGA感兴趣的，可以参考之前的导航帖，那也是这个坑的由来：<br><a href="https://goo.gl/rwcTdd" target="_blank" rel="external">TCGA教程大合集：不会编程是常态，但永远难不倒努力前行的临床医生</a></p>
+<p>下面我们正式开始：</p>
+<h2 id="芯片分析："><a href="#芯片分析：" class="headerlink" title="芯片分析："></a>芯片分析：</h2><hr>
+<p>其实这边跟TCGA帖子有点重合，说到底，数据挖掘有两个作用</p>
+<ul>
+<li>没有课题的时候产生课题</li>
+<li>没有机制的时候提供思路</li>
+</ul>
+<p><a href="https://goo.gl/trov31" target="_blank" rel="external">如何挖别人的数据，写自己的标书</a><br><a href="https://goo.gl/xtnZoe" target="_blank" rel="external">如何挖别人的数据，写自己的标书 II</a><br><a href="https://goo.gl/FKjFrh" target="_blank" rel="external">如何挖别人的数据，写自己的标书 3</a><br><a href="https://goo.gl/CX2PTd" target="_blank" rel="external">表达谱数据挖掘神器，一个就够！（上）</a></p>
+<h2 id="单基因信息汇总数据库："><a href="#单基因信息汇总数据库：" class="headerlink" title="单基因信息汇总数据库："></a>单基因信息汇总数据库：</h2><hr>
+<p>通过TCGA帖子和前面的帖子，你已经有足够多的课题可以来做，但是如何筛选特定的基因，并确定自己的研究方向，你得看看下面的帖子<br><a href="https://goo.gl/jfu7be" target="_blank" rel="external">研究单个基因的生物信息学分析工具</a><br><a href="https://goo.gl/W7Ku7C" target="_blank" rel="external">还在为找不到基因序列而烦恼么？</a><br><a href="https://goo.gl/LMztd1" target="_blank" rel="external">如何检索基因的DNA,mRNA,protein序列</a><br><a href="https://goo.gl/RN97Yi" target="_blank" rel="external">文献中基因挖掘的一个简单神器</a><br><a href="https://goo.gl/gtU3wj" target="_blank" rel="external">为啥要学习这些讨厌的蛋白互作分析工具？</a><br><a href="https://goo.gl/TAH4Po" target="_blank" rel="external">如何正确地寻找能扯上关系的明星分子</a><br><a href="https://goo.gl/D8ziqw" target="_blank" rel="external">告诉你文献聚类分析的神器 1</a><br><a href="https://goo.gl/L8A7Sg" target="_blank" rel="external">告诉你文献聚类分析的神器2</a><br><a href="https://goo.gl/HZs4SQ" target="_blank" rel="external">新神器get√，用这个来搜PubMed</a><br><a href="https://goo.gl/RV7ddg" target="_blank" rel="external">更深层次的文献分析神器Get√！</a><br><a href="https://goo.gl/AK3RoN" target="_blank" rel="external">偷懒的同学看好了，了解基因的捷径——gene card</a><br><a href="https://goo.gl/XTRftV" target="_blank" rel="external">如何查询和展示一个基因在组织和细胞株里面的表达？</a><br><a href="https://goo.gl/X7j8YM" target="_blank" rel="external">人家五分文章是用这个神器来验证免疫组化的</a><br><a href="https://goo.gl/NRce1Q" target="_blank" rel="external">介绍一个来自全球最壕高校的数据库……</a><br><a href="https://goo.gl/gAXQux" target="_blank" rel="external">（工具篇）S5E55：肿瘤耐药研究神器之——GDSC</a></p>
+<h2 id="转录调控相关："><a href="#转录调控相关：" class="headerlink" title="转录调控相关："></a>转录调控相关：</h2><hr>
+<p>我的导师告诉我，在90年代，包括现在，CELL杂志每期有一般的文章都是转录调控相关的，所以至今我们还保留在强悍得转录调控研究传统<br>这里面包括如何找启动子，预测结合位点，转录调控的三驾马车你也应该知道：Luciferase，EMSA，ChIP，但是这些实验相关的知识不是本次的重点，再次挖坑。<br>先看看我写过的帖子<br><a href="https://goo.gl/Y4CT74" target="_blank" rel="external">找出基因的启动子并分析其结合位点</a><br><a href="https://goo.gl/FwbQ5w" target="_blank" rel="external">来，再教你搜个启动子吧……</a><br><a href="https://goo.gl/fG4zSn" target="_blank" rel="external">转录因子和靶基因系列（一）转录因子调控哪些下游基因，有实验证据的线索</a><br><a href="https://goo.gl/A3QgS8" target="_blank" rel="external">转录因子和靶基因系列（二）按类检索转录因子ChIP-seq数据</a><br><a href="https://goo.gl/FGDku1" target="_blank" rel="external">转录因子和靶基因系列（三）哪个TF会来结合我这段DNA</a><br><a href="https://goo.gl/UFsBfp" target="_blank" rel="external">要是我有一堆基因，想知道他们的转录因子，要怎么整？</a><br><a href="https://goo.gl/CSPhGH" target="_blank" rel="external">十分钟设计一个转录因子相关的课题，坐稳了，装个逼给你看</a></p>
+<h2 id="表观遗传相关："><a href="#表观遗传相关：" class="headerlink" title="表观遗传相关："></a>表观遗传相关：</h2><hr>
+<p>我们知道，人体内最终发货核心作用的是编码基因所对应的蛋白，而为什么拥有相同的基因组，心肌细胞和肝脏细胞差别那么大呢，一个是转录调控，另外一个重要的就是表观遗传。<br><a href="https://goo.gl/VpZeyY" target="_blank" rel="external">组蛋白修饰预示着什么？</a><br><a href="https://goo.gl/yXjdJv" target="_blank" rel="external">药物处理多久后能看到组蛋白修饰的变化？</a><br><a href="https://goo.gl/KQt9fq" target="_blank" rel="external">9分多的LncRNA相关的表观研究是怎么做的？</a><br><a href="https://goo.gl/EgHJ6H" target="_blank" rel="external">跟着岳大师学ENCODE和RoadMap</a><br><a href="https://goo.gl/Z1joQ1" target="_blank" rel="external">跟着岳大师学ENCODE和RoadMap（二）——利用ENCODE做特定分子的实验</a><br><a href="https://goo.gl/1NgYoF" target="_blank" rel="external">跟着岳大师学ENCODE和RoadMap（三）——如何分类查看转录因子并可视化分析ChIP-Seq</a><br><a href="https://goo.gl/rfgdVS" target="_blank" rel="external">WashU EpiGenome Browser的基本用法——跟着岳大师学ENCODE和RoadMap（四）</a><br><a href="https://goo.gl/HF7wqA" target="_blank" rel="external">如何神奇地用ENCODE挖课题</a></p>
+<h2 id="长链非编码RNA相关："><a href="#长链非编码RNA相关：" class="headerlink" title="长链非编码RNA相关："></a>长链非编码RNA相关：</h2><hr>
+<p>按照上面的说法，我觉得目前科研就围绕两个字进行，调控，转录调控，翻译调控，表观遗传，然而那些非编码RNA发挥越来越多的调控作用，<br>这篇帖子要看看<br><a href="https://goo.gl/9qEHWS" target="_blank" rel="external">（文章篇）S5E53：标准化lncRNA课题设计</a><br>但是我们同时看到，大部分团队对于长链非编码RNA的研究只是出于浅表状态，而我们理解的就是<br>老老实实地做RACE确定全长<br>通过RNA-pulldown确定结合蛋白，或者其他方法确定结合的DNA，ＲＮＡ，<br>然后再证明如何起作用，好的文章只做了一件事情，把事情说清楚。<br>然后再看看下面的帖子吧。<br><a href="https://goo.gl/R1XbqJ" target="_blank" rel="external">如何预测LncRNA与蛋白的相互结合？</a><br><a href="https://goo.gl/i7AUaP" target="_blank" rel="external">你的lncRNA是否因SNP而发挥了不同的作用？导致预后的不同？</a><br><a href="https://goo.gl/yL27CL" target="_blank" rel="external">要怎么证明LncRNA是LncRNA？！</a><br><a href="https://goo.gl/CfAPAZ" target="_blank" rel="external">（工具篇）：神器之——lncRNA编码能力预测</a><br><a href="https://goo.gl/xAMtjh" target="_blank" rel="external">如何用BLAST来预测lncRNA相关的miRNA</a><br><a href="https://goo.gl/bu2zJj" target="_blank" rel="external">为啥你辛辛苦苦做的lncRNA会被reviewer毙掉</a><br><a href="https://goo.gl/7Au7Z9" target="_blank" rel="external">如何绘制高大上的RNA二级结构图？</a><br><a href="https://goo.gl/CfW6RH" target="_blank" rel="external">（工具篇）：神器之——lncRNA编码能力预测</a><br><a href="https://goo.gl/DhedyP" target="_blank" rel="external">如何查询分子的物种保守性？</a><br><a href="https://goo.gl/QNGjkE" target="_blank" rel="external">如何预测lncRNA的靶基因？</a></p>
+<h2 id="环状RNA相关："><a href="#环状RNA相关：" class="headerlink" title="环状RNA相关："></a>环状RNA相关：</h2><hr>
+<p>对于环状ＲＮＡ，我有个奇怪的想法，临床医生做到这一块的内容，实际上自己能做的少之又少，<br>如何筛选环状ＲＮＡ，请公司做测序<br>如何分析环状ＲＮＡ，生信公司给你作图<br>如何设计引物验证，实际上你不会<br>如何让ＲＮＡ成环，你也不会，请公司做<br>如何敲减，还是不会，实际上很困难<br>所以，一般的团队跟我讲，实际上是同学自豪地跟我说，他研究的方向是环状ＲＮＡ，实际上我的心内五味杂陈，最后汇成一句“你们团队好牛逼”<br><a href="https://goo.gl/tykDRz" target="_blank" rel="external">circRNA 引物设计</a><br><a href="https://goo.gl/fSxihJ" target="_blank" rel="external">环状RNA定量PCR技术详解</a><br><a href="https://goo.gl/5cKTsi" target="_blank" rel="external">circRNA研究必备神器之傻瓜攻略大全</a><br><a href="https://goo.gl/jLZvid" target="_blank" rel="external">你不能不知道的2个CircRNA研究在线工具！</a><br><a href="https://goo.gl/RV53Qq" target="_blank" rel="external">circRNA研究必备工具：circRNA翻译潜能预测</a><br><a href="https://goo.gl/492eVB" target="_blank" rel="external">非编码RNA真的不编码吗？9张图告诉你答案</a><br><a href="https://goo.gl/ur88BQ" target="_blank" rel="external">环状RNA翻译蛋白研究技术思路剖析</a><br><a href="https://goo.gl/sfzN7f" target="_blank" rel="external">Cell子刊连续两篇环状RNA翻译蛋白文章发表！</a><br><a href="https://goo.gl/Yrqjjb" target="_blank" rel="external">circRNADb：首个汇总编码蛋白环状RNA的数据库</a><br><a href="https://goo.gl/Uqgcym" target="_blank" rel="external">Nature Reviews Genetics探讨环状RNA研究方法现状</a></p>
+<p>碎碎念：<br>实际上看到这里的人不多，因为这样的帖子肯定是要收藏的，肯定是要跟自己说，以后会好好看的，可是多半不会看。大部分朋友蠢蠢欲动心急火燎地要学习生信，往往无疾而终，心灰意冷的时候，看看这篇帖子，你会重新打量人生，重振雄风的，因为你会发现，想要解决的问题，都有人给你提供方案了。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/17/02-machine-learning/" rel="next" title="机器学习资源汇总">
+                <i class="fa fa-chevron-left"></i> 机器学习资源汇总
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/17/04-TCGA/" rel="prev" title="TCGA数据里大集合">
+                TCGA数据里大集合 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Shipeng Guo</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#芯片分析："><span class="nav-number">1.</span> <span class="nav-text">芯片分析：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单基因信息汇总数据库："><span class="nav-number">2.</span> <span class="nav-text">单基因信息汇总数据库：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转录调控相关："><span class="nav-number">3.</span> <span class="nav-text">转录调控相关：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表观遗传相关："><span class="nav-number">4.</span> <span class="nav-text">表观遗传相关：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#长链非编码RNA相关："><span class="nav-number">5.</span> <span class="nav-text">长链非编码RNA相关：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#环状RNA相关："><span class="nav-number">6.</span> <span class="nav-text">环状RNA相关：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Shipeng Guo</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
