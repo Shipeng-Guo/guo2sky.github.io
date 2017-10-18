@@ -88,18 +88,18 @@
 
 
 
-<meta name="description" content="虽然我现在有了自己的服务器，但是我觉得：  临床医生所理解的生信分析仅仅是数据库的使用，即使是数据库，大部分孩子也是知之甚少。  我把看过的帖子做一个合集，方便自己查阅看一个万事屋2015年6月25日对cBioPortal的介绍，那时你在干嘛呢？挖坟神器：TCGA的影分身 再看看郭大侠一天之内如何挖掘4个TCGA数据库的基于TCGA蛋白芯片数据的分析神器如何从茫茫文献中挖掘出神器 那一天我找到了基">
+<meta name="description" content="虽然我现在有了自己的服务器，但是我觉得：  临床医生所理解的生信分析仅仅是数据库的使用，即使是数据库，大部分孩子也是知之甚少。  我把看过的帖子做一个合集，方便自己查阅看一个万事屋2015年6月25日对cBioPortal的介绍，那时你在干嘛呢？挖坟神器：TCGA的影分身再看看郭大侠一天之内如何挖掘4个TCGA数据库的基于TCGA蛋白芯片数据的分析神器如何从茫茫文献中挖掘出神器那一天我找到了基于T">
 <meta name="keywords" content="数据库,TCGA">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TCGA数据里大集合">
 <meta property="og:url" content="https://guo2sky.github.io/2017/10/17/04-TCGA/index.html">
 <meta property="og:site_name" content="果子学生信">
-<meta property="og:description" content="虽然我现在有了自己的服务器，但是我觉得：  临床医生所理解的生信分析仅仅是数据库的使用，即使是数据库，大部分孩子也是知之甚少。  我把看过的帖子做一个合集，方便自己查阅看一个万事屋2015年6月25日对cBioPortal的介绍，那时你在干嘛呢？挖坟神器：TCGA的影分身 再看看郭大侠一天之内如何挖掘4个TCGA数据库的基于TCGA蛋白芯片数据的分析神器如何从茫茫文献中挖掘出神器 那一天我找到了基">
+<meta property="og:description" content="虽然我现在有了自己的服务器，但是我觉得：  临床医生所理解的生信分析仅仅是数据库的使用，即使是数据库，大部分孩子也是知之甚少。  我把看过的帖子做一个合集，方便自己查阅看一个万事屋2015年6月25日对cBioPortal的介绍，那时你在干嘛呢？挖坟神器：TCGA的影分身再看看郭大侠一天之内如何挖掘4个TCGA数据库的基于TCGA蛋白芯片数据的分析神器如何从茫茫文献中挖掘出神器那一天我找到了基于T">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-18T04:36:25.964Z">
+<meta property="og:updated_time" content="2017-10-18T08:44:30.699Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TCGA数据里大集合">
-<meta name="twitter:description" content="虽然我现在有了自己的服务器，但是我觉得：  临床医生所理解的生信分析仅仅是数据库的使用，即使是数据库，大部分孩子也是知之甚少。  我把看过的帖子做一个合集，方便自己查阅看一个万事屋2015年6月25日对cBioPortal的介绍，那时你在干嘛呢？挖坟神器：TCGA的影分身 再看看郭大侠一天之内如何挖掘4个TCGA数据库的基于TCGA蛋白芯片数据的分析神器如何从茫茫文献中挖掘出神器 那一天我找到了基">
+<meta name="twitter:description" content="虽然我现在有了自己的服务器，但是我觉得：  临床医生所理解的生信分析仅仅是数据库的使用，即使是数据库，大部分孩子也是知之甚少。  我把看过的帖子做一个合集，方便自己查阅看一个万事屋2015年6月25日对cBioPortal的介绍，那时你在干嘛呢？挖坟神器：TCGA的影分身再看看郭大侠一天之内如何挖掘4个TCGA数据库的基于TCGA蛋白芯片数据的分析神器如何从茫茫文献中挖掘出神器那一天我找到了基于T">
 
 
 
@@ -109,7 +109,7 @@
     root: '/',
     scheme: 'Gemini',
     version: '5.1.3',
-    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -154,7 +154,7 @@
     
   
 
-  <div class="container sidebar-position-right page-post-detail">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -249,11 +249,55 @@
           </a>
         </li>
       
+        
+        <li class="menu-item menu-item-catalogue">
+          <a href="/catalogue" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            目录
+          </a>
+        </li>
+      
 
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
       
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
   
 </nav>
 
@@ -287,7 +331,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Shipeng Guo">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images\touxiang.png">
+      <meta itemprop="image" content="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/EDia529KCk.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -317,7 +361,19 @@
             
 
             
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-10-18T16:44:30+08:00">
+                2017-10-18
+              </time>
             
           </span>
 
@@ -353,7 +409,43 @@
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-eye"></i> 阅读次数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
 
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  847
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
           
 
           
@@ -375,18 +467,7 @@
 <blockquote>
 <p>临床医生所理解的生信分析仅仅是数据库的使用，即使是数据库，大部分孩子也是知之甚少。</p>
 </blockquote>
-<p>我把看过的帖子做一个合集，方便自己查阅<br>看一个万事屋2015年6月25日对cBioPortal的介绍，那时你在干嘛呢？<br><a href="https://mp.weixin.qq.com/s?__biz=MzA3ODU1NjUyNw==&amp;mid=210171053&amp;idx=1&amp;sn=0330f3d3293e1f37b3dc6ca2ebac1b04&amp;scene=1#rd" target="_blank" rel="external">挖坟神器：TCGA的影分身</a></p>
-<p>再看看郭大侠一天之内如何挖掘4个TCGA数据库的<br><a href="https://mp.weixin.qq.com/s?__biz=MzA3ODU1NjUyNw==&amp;mid=2652324823&amp;idx=1&amp;sn=89ae5f86abaf3cfa805daf28afa1f551&amp;scene=21#wechat_redirect" target="_blank" rel="external">基于TCGA蛋白芯片数据的分析神器</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA3ODU1NjUyNw==&amp;mid=2652324947&amp;idx=1&amp;sn=17716f28c55b32f6909b68ab76351502&amp;scene=1&amp;srcid=0728EX6fdeQ8jI6woS7LqP0S#rd" target="_blank" rel="external">如何从茫茫文献中挖掘出神器</a></p>
-<p>那一天我找到了基于TCGA的长链非编码神器Tanric，但是我并没有写贴<br>这是之后出现的Tanric帖子<br><a href="https://mp.weixin.qq.com/s?__biz=MjM5MzMwNzk5Mg==&amp;mid=2650126228&amp;idx=1&amp;sn=c52444c34fce9c7926c099f991fa406b&amp;mpshare=1&amp;scene=1&amp;srcid=10013e0KZ1FPTKULmGUk8aiX#rd" target="_blank" rel="external">lncRNA功能研究神器：TANRIC数据库</a><br><a href="https://mp.weixin.qq.com/s?__biz=MjM5MTk5Njc0MQ==&amp;mid=2649960542&amp;idx=1&amp;sn=9a012aef641e7630f520219628f3739b&amp;scene=1&amp;srcid=0902vf05uEg2k9yakXl3zW5z#rd" target="_blank" rel="external">lncRNA研究利器之”TANRIC”：一个探索癌症中lncRNA功能的交互式开放平台</a></p>
-<p>对于TCGA数据，生存分析是刚需，在Twitter上无意间发现了OncoLnc，<br><a href="https://mp.weixin.qq.com/s?__biz=MzA3ODU1NjUyNw==&amp;mid=2652326043&amp;idx=1&amp;sn=c70bb1f7a29d189b11d9bef983b2be5a&amp;chksm=84a3149bb3d49d8d263ac34e78370a2df766336e4a556aa58abcd1b452552c99ccfc00125016&amp;mpshare=1&amp;scene=1&amp;srcid=11180ENbgTpvME9nnerVtljJ#rd" target="_blank" rel="external">生存曲线这种东西，还是用别人的好</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzAwMzY4MTYxNw==&amp;mid=2655754231&amp;idx=1&amp;sn=cdb3d61907b175634daaf7bd48befdc7&amp;chksm=80884bc9b7ffc2df92fcbe4be77f1c7f67599dd0e00e823fdbc306edba584320db4d464571e0&amp;mpshare=1&amp;scene=1&amp;srcid=1115x5jvqpQ38WLWcqjzoeHc#rd" target="_blank" rel="external">懒人怎么做肿瘤病人的生存分析？</a></p>
-<p>而如果你关注生信技能树这个公众号，你会发现还有一个神帖<br><a href="https://mp.weixin.qq.com/s?__biz=MzAxMDkxODM1Ng==&amp;mid=2247484438&amp;idx=1&amp;sn=677f29555d6073d2ce616436bf5a9456&amp;chksm=9b4844adac3fcdbb422973d6724b2c9899f6bcc0b6f49da47730e029e5fe6b3a6e085e294894&amp;mpshare=1&amp;scene=1&amp;srcid=0530H7f0pteEVWNdmD9FKeom#rd" target="_blank" rel="external">都可以批量做生存分析了，还要网页工具干嘛？</a></p>
-<p>说了这么多加入你还没有分子，可以尝试一下这里的方法：<br><a href="https://mp.weixin.qq.com/s?__biz=MzAwMzY4MTYxNw==&amp;mid=2655752073&amp;idx=1&amp;sn=764d33af97623f4ab7794c4b5e366721&amp;scene=1&amp;srcid=0726rRhc5bZ9yIxeLh49CP3u#rd" target="_blank" rel="external">如何在不懂生信的前提下挖掘别人的数据？</a><br><a href=""></a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA3ODU1NjUyNw==&amp;mid=2652324801&amp;idx=1&amp;sn=2f3c164e32081d3bd518d7e8b6887085&amp;scene=1&amp;srcid=0718rC1g9RaLTh2qgxYjAotO#rd" target="_blank" rel="external">好烦！又要给你们推荐神器了……</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA3ODU1NjUyNw==&amp;mid=2652326031&amp;idx=1&amp;sn=6433a9dade16a31d613dbd445e85fc07&amp;chksm=84a3148fb3d49d99b5114108a93d153967690cce3dde9b0120bacbbf4a496434e54708c821c2&amp;mpshare=1&amp;scene=1&amp;srcid=1117muynfbYtfNcIXcHllz3x#rd" target="_blank" rel="external">我就是用这神器随便挖一个TCGA</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzIyMzA2MTcwMg==&amp;mid=403198108&amp;idx=1&amp;sn=1a6b9cdfb2ab88ee7be4e45acc91aa43&amp;mpshare=1&amp;scene=1&amp;srcid=0616rpxS4dn7cW5iFLdxfbr7#rd" target="_blank" rel="external">福利就在今日-oncomine的用法</a></p>
-<p>oncomine是我的启蒙老师，需要教育邮箱，我想大部分孩子都没有想过去申请一个，而我可能是全校少数的申请者，当时管理员都忘了如何开通，眼神特别惊讶，而我的启蒙帖子是这样的<br><a href="https://mp.weixin.qq.com/s?__biz=MzA3ODU1NjUyNw==&amp;mid=203379668&amp;idx=1&amp;sn=4c79cd6aaec46c00a5cd71ff2a44f9cc&amp;scene=21#wechat_redirect" target="_blank" rel="external">还愁什么？前期工作就这么设计！</a></p>
-<p>假如你不会系统地挖掘数据可以看看这个：<br>这是一个学生学习后的成果：<br><a href="https://mp.weixin.qq.com/s?__biz=MzA3ODU1NjUyNw==&amp;mid=2652324927&amp;idx=1&amp;sn=26ba2981d1f058f428423642992089df&amp;scene=1&amp;srcid=0726sYr7Lpk3MvtXXJyNFb7F#rd" target="_blank" rel="external">盗墓笔记——如何用万事屋给的神器，不做实验挖掘乳腺癌相关标记基因？</a><br>下面这个帖子意义重大，是郭猛老师的GEO课程，我认为这个可能是全网第一个大规模公开的GEO视频，是我R语言的入门老师，当时我赞赏了50块，之后又系统的学习了生信技能树群主的课程，特别好。<br><a href="https://mp.weixin.qq.com/s?__biz=MzA3ODU1NjUyNw==&amp;mid=211050201&amp;idx=1&amp;sn=81d4209b2fda96704892fd814ae68558&amp;scene=1#rd" target="_blank" rel="external">GEO芯片数据下载与分析技巧（视频版）</a></p>
-<p>可能R语言有点不适应，你可以尝试用去年我给出的方案：<br><a href="https://mp.weixin.qq.com/s?__biz=MzIyMzA2MTcwMg==&amp;mid=2650732488&amp;idx=1&amp;sn=98d0bd601bb68acd77d4efd7dc8fa483&amp;chksm=f029a461c75e2d772b0f68c647e367c25e9bd88b2b20c2b0efa0d5ea3eeab750a7fc9df0a499&amp;mpshare=1&amp;scene=1&amp;srcid=0616nFPEpReQpvVBRZJmVBXb#rd" target="_blank" rel="external">代码芯片分析图文教程：每个人都可以做一做的生信第1题</a></p>
-<p>如果你研究甲基化，看看这个两个<br><a href="https://mp.weixin.qq.com/s?__biz=MzAwMzY4MTYxNw==&amp;mid=2655752115&amp;idx=1&amp;sn=0093e0c8c38f3732cafdf17e9102ff4c&amp;scene=1&amp;srcid=0728EqhJFrG5Rp4vn5BXPgeq#rd" target="_blank" rel="external">基因甲基化和表达如何实现一站式查询？</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA3ODU1NjUyNw==&amp;mid=2652323746&amp;idx=1&amp;sn=71451eb7b0593cd2723a5885eeb6ec3d&amp;scene=1&amp;srcid=0426pQLNIVDyWiifoyuKahon#rd" target="_blank" rel="external">这是一款有毒的神器网址http://mexpress.be/</a></p>
-<p>如果你对上面的都不感兴趣，试一下这个，这是我认为目前最好的TCGA可视化数据库，而我是全网第一个写帖子推荐的<br><a href="https://mp.weixin.qq.com/s?__biz=MzAxMDkxODM1Ng==&amp;mid=2247484284&amp;idx=1&amp;sn=e779feb8db58486017896fd44194869d&amp;chksm=9b4843c7ac3fcad10dcd77647dbdd76b7fb1b82071236f4afa5760a0f458b066977ac7068c3f&amp;mpshare=1&amp;scene=1&amp;srcid=0406t0D1MxAVPxNahR9MsGrj#rd" target="_blank" rel="external">中国制造:碉堡的TCGA可视化网站GEPIA</a></p>
-<p>在这之前，我觉得看一下这个帖子是有益于身心健康的：<br><a href="https://mp.weixin.qq.com/s?__biz=MzIyMzA2MTcwMg==&amp;mid=2650732330&amp;idx=1&amp;sn=35751c91d8cbd62cf988679701f9da8e&amp;chksm=f029a483c75e2d951591f06cfb923f8d92a5c30e2bb2e962f01a582aa159ad0a60520a208d9e&amp;mpshare=1&amp;scene=1&amp;srcid=1201aeqQJfsBSaN71KyB8Dh9#rd" target="_blank" rel="external">课题设计：收不完的病人查不完的房，临床医生如何快速地设计一个靠谱的课题？</a></p>
+<p>我把看过的帖子做一个合集，方便自己查阅<br>看一个万事屋2015年6月25日对cBioPortal的介绍，那时你在干嘛呢？<br><a href="https://mp.weixin.qq.com/s?__biz=MzA3ODU1NjUyNw==&amp;mid=210171053&amp;idx=1&amp;sn=0330f3d3293e1f37b3dc6ca2ebac1b04&amp;scene=1#rd" target="_blank" rel="external">挖坟神器：TCGA的影分身</a><br>再看看郭大侠一天之内如何挖掘4个TCGA数据库的<br><a href="https://mp.weixin.qq.com/s?__biz=MzA3ODU1NjUyNw==&amp;mid=2652324823&amp;idx=1&amp;sn=89ae5f86abaf3cfa805daf28afa1f551&amp;scene=21#wechat_redirect" target="_blank" rel="external">基于TCGA蛋白芯片数据的分析神器</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA3ODU1NjUyNw==&amp;mid=2652324947&amp;idx=1&amp;sn=17716f28c55b32f6909b68ab76351502&amp;scene=1&amp;srcid=0728EX6fdeQ8jI6woS7LqP0S#rd" target="_blank" rel="external">如何从茫茫文献中挖掘出神器</a><br>那一天我找到了基于TCGA的长链非编码神器Tanric，但是我并没有写贴<br>这是之后出现的Tanric帖子<br><a href="https://mp.weixin.qq.com/s?__biz=MjM5MzMwNzk5Mg==&amp;mid=2650126228&amp;idx=1&amp;sn=c52444c34fce9c7926c099f991fa406b&amp;mpshare=1&amp;scene=1&amp;srcid=10013e0KZ1FPTKULmGUk8aiX#rd" target="_blank" rel="external">lncRNA功能研究神器：TANRIC数据库</a><br><a href="https://mp.weixin.qq.com/s?__biz=MjM5MTk5Njc0MQ==&amp;mid=2649960542&amp;idx=1&amp;sn=9a012aef641e7630f520219628f3739b&amp;scene=1&amp;srcid=0902vf05uEg2k9yakXl3zW5z#rd" target="_blank" rel="external">lncRNA研究利器之”TANRIC”：一个探索癌症中lncRNA功能的交互式开放平台</a><br><a id="more"></a><br>对于TCGA数据，生存分析是刚需，在Twitter上无意间发现了OncoLnc，<br><a href="https://mp.weixin.qq.com/s?__biz=MzA3ODU1NjUyNw==&amp;mid=2652326043&amp;idx=1&amp;sn=c70bb1f7a29d189b11d9bef983b2be5a&amp;chksm=84a3149bb3d49d8d263ac34e78370a2df766336e4a556aa58abcd1b452552c99ccfc00125016&amp;mpshare=1&amp;scene=1&amp;srcid=11180ENbgTpvME9nnerVtljJ#rd" target="_blank" rel="external">生存曲线这种东西，还是用别人的好</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzAwMzY4MTYxNw==&amp;mid=2655754231&amp;idx=1&amp;sn=cdb3d61907b175634daaf7bd48befdc7&amp;chksm=80884bc9b7ffc2df92fcbe4be77f1c7f67599dd0e00e823fdbc306edba584320db4d464571e0&amp;mpshare=1&amp;scene=1&amp;srcid=1115x5jvqpQ38WLWcqjzoeHc#rd" target="_blank" rel="external">懒人怎么做肿瘤病人的生存分析？</a><br>而如果你关注生信技能树这个公众号，你会发现还有一个神帖<br><a href="https://mp.weixin.qq.com/s?__biz=MzAxMDkxODM1Ng==&amp;mid=2247484438&amp;idx=1&amp;sn=677f29555d6073d2ce616436bf5a9456&amp;chksm=9b4844adac3fcdbb422973d6724b2c9899f6bcc0b6f49da47730e029e5fe6b3a6e085e294894&amp;mpshare=1&amp;scene=1&amp;srcid=0530H7f0pteEVWNdmD9FKeom#rd" target="_blank" rel="external">都可以批量做生存分析了，还要网页工具干嘛？</a><br>说了这么多加入你还没有分子，可以尝试一下这里的方法：<br><a href="https://mp.weixin.qq.com/s?__biz=MzAwMzY4MTYxNw==&amp;mid=2655752073&amp;idx=1&amp;sn=764d33af97623f4ab7794c4b5e366721&amp;scene=1&amp;srcid=0726rRhc5bZ9yIxeLh49CP3u#rd" target="_blank" rel="external">如何在不懂生信的前提下挖掘别人的数据？</a><br><a href=""></a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA3ODU1NjUyNw==&amp;mid=2652324801&amp;idx=1&amp;sn=2f3c164e32081d3bd518d7e8b6887085&amp;scene=1&amp;srcid=0718rC1g9RaLTh2qgxYjAotO#rd" target="_blank" rel="external">好烦！又要给你们推荐神器了……</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA3ODU1NjUyNw==&amp;mid=2652326031&amp;idx=1&amp;sn=6433a9dade16a31d613dbd445e85fc07&amp;chksm=84a3148fb3d49d99b5114108a93d153967690cce3dde9b0120bacbbf4a496434e54708c821c2&amp;mpshare=1&amp;scene=1&amp;srcid=1117muynfbYtfNcIXcHllz3x#rd" target="_blank" rel="external">我就是用这神器随便挖一个TCGA</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzIyMzA2MTcwMg==&amp;mid=403198108&amp;idx=1&amp;sn=1a6b9cdfb2ab88ee7be4e45acc91aa43&amp;mpshare=1&amp;scene=1&amp;srcid=0616rpxS4dn7cW5iFLdxfbr7#rd" target="_blank" rel="external">福利就在今日-oncomine的用法</a><br>oncomine是我的启蒙老师，需要教育邮箱，我想大部分孩子都没有想过去申请一个，而我可能是全校少数的申请者，当时管理员都忘了如何开通，眼神特别惊讶，而我的启蒙帖子是这样的<br><a href="https://mp.weixin.qq.com/s?__biz=MzA3ODU1NjUyNw==&amp;mid=203379668&amp;idx=1&amp;sn=4c79cd6aaec46c00a5cd71ff2a44f9cc&amp;scene=21#wechat_redirect" target="_blank" rel="external">还愁什么？前期工作就这么设计！</a><br>假如你不会系统地挖掘数据可以看看这个：<br>这是一个学生学习后的成果：<br><a href="https://mp.weixin.qq.com/s?__biz=MzA3ODU1NjUyNw==&amp;mid=2652324927&amp;idx=1&amp;sn=26ba2981d1f058f428423642992089df&amp;scene=1&amp;srcid=0726sYr7Lpk3MvtXXJyNFb7F#rd" target="_blank" rel="external">盗墓笔记——如何用万事屋给的神器，不做实验挖掘乳腺癌相关标记基因？</a><br>下面这个帖子意义重大，是郭猛老师的GEO课程，我认为这个可能是全网第一个大规模公开的GEO视频，是我R语言的入门老师，当时我赞赏了50块，之后又系统的学习了生信技能树群主的课程，特别好。<br><a href="https://mp.weixin.qq.com/s?__biz=MzA3ODU1NjUyNw==&amp;mid=211050201&amp;idx=1&amp;sn=81d4209b2fda96704892fd814ae68558&amp;scene=1#rd" target="_blank" rel="external">GEO芯片数据下载与分析技巧（视频版）</a><br>可能R语言有点不适应，你可以尝试用去年我给出的方案：<br><a href="https://mp.weixin.qq.com/s?__biz=MzIyMzA2MTcwMg==&amp;mid=2650732488&amp;idx=1&amp;sn=98d0bd601bb68acd77d4efd7dc8fa483&amp;chksm=f029a461c75e2d772b0f68c647e367c25e9bd88b2b20c2b0efa0d5ea3eeab750a7fc9df0a499&amp;mpshare=1&amp;scene=1&amp;srcid=0616nFPEpReQpvVBRZJmVBXb#rd" target="_blank" rel="external">代码芯片分析图文教程：每个人都可以做一做的生信第1题</a><br>如果你研究甲基化，看看这个两个<br><a href="https://mp.weixin.qq.com/s?__biz=MzAwMzY4MTYxNw==&amp;mid=2655752115&amp;idx=1&amp;sn=0093e0c8c38f3732cafdf17e9102ff4c&amp;scene=1&amp;srcid=0728EqhJFrG5Rp4vn5BXPgeq#rd" target="_blank" rel="external">基因甲基化和表达如何实现一站式查询？</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA3ODU1NjUyNw==&amp;mid=2652323746&amp;idx=1&amp;sn=71451eb7b0593cd2723a5885eeb6ec3d&amp;scene=1&amp;srcid=0426pQLNIVDyWiifoyuKahon#rd" target="_blank" rel="external">这是一款有毒的神器网址http://mexpress.be/</a><br>如果你对上面的都不感兴趣，试一下这个，这是我认为目前最好的TCGA可视化数据库，而我是全网第一个写帖子推荐的<br><a href="https://mp.weixin.qq.com/s?__biz=MzAxMDkxODM1Ng==&amp;mid=2247484284&amp;idx=1&amp;sn=e779feb8db58486017896fd44194869d&amp;chksm=9b4843c7ac3fcad10dcd77647dbdd76b7fb1b82071236f4afa5760a0f458b066977ac7068c3f&amp;mpshare=1&amp;scene=1&amp;srcid=0406t0D1MxAVPxNahR9MsGrj#rd" target="_blank" rel="external">中国制造:碉堡的TCGA可视化网站GEPIA</a><br>在这之前，我觉得看一下这个帖子是有益于身心健康的：<br><a href="https://mp.weixin.qq.com/s?__biz=MzIyMzA2MTcwMg==&amp;mid=2650732330&amp;idx=1&amp;sn=35751c91d8cbd62cf988679701f9da8e&amp;chksm=f029a483c75e2d951591f06cfb923f8d92a5c30e2bb2e962f01a582aa159ad0a60520a208d9e&amp;mpshare=1&amp;scene=1&amp;srcid=1201aeqQJfsBSaN71KyB8Dh9#rd" target="_blank" rel="external">课题设计：收不完的病人查不完的房，临床医生如何快速地设计一个靠谱的课题？</a></p>
 
       
     </div>
@@ -394,21 +475,39 @@
     
     
     
-    
-      <div>
+    <div>
+        
         <div>
     
-        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+        <div style="text-align:center;color: #ccc;font-size:14px;">------ 本文结束------</div>
     
 </div>
 
+        
+     </div>
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Shipeng Guo
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://guo2sky.github.io/2017/10/17/04-TCGA/" title="TCGA数据里大集合">https://guo2sky.github.io/2017/10/17/04-TCGA/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
       </div>
-    
-
-    
-
-    
-
     
 
     <footer class="post-footer">
@@ -500,7 +599,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image"
-                src="/images\touxiang.png"
+                src="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/EDia529KCk.jpg"
                 alt="Shipeng Guo" />
             
               <p class="site-author-name" itemprop="name">Shipeng Guo</p>
@@ -569,6 +668,12 @@
                 </span>
               
                 <span class="links-of-author-item">
+                  <a href="http://www.jianshu.com/users/9d760c7ce737/timeline" target="_blank" title="简书">
+                    
+                      <i class="fa fa-fw fa-heartbeat"></i>简书</a>
+                </span>
+              
+                <span class="links-of-author-item">
                   <a href="https://twitter.com/guo2sky" target="_blank" title="Twitter">
                     
                       <i class="fa fa-fw fa-twitter"></i>Twitter</a>
@@ -582,6 +687,24 @@
 
           
           
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.bio-info-trainee.com/" title="生信菜鸟团" target="_blank">生信菜鸟团</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://vip.biotrainee.com/" title="生信技能树VIP" target="_blank">生信技能树VIP</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
 
           
 
@@ -590,6 +713,13 @@
 
       
 
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
       
 
     </div>
@@ -613,15 +743,9 @@
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
 
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.3</div>
 
 
 
@@ -636,6 +760,26 @@
 </div>
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
 
 
 
@@ -647,11 +791,6 @@
       </div>
     </footer>
 
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
     
 
     
@@ -676,6 +815,8 @@
 
   
 
+
+  
 
 
 
@@ -715,6 +856,11 @@
   
   
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 
@@ -785,6 +931,323 @@
 
   
 
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
 
 
 
@@ -801,6 +1264,7 @@
   
 
   
+
 
 </body>
 <!-- 页面点击小红心 -->
