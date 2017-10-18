@@ -121,7 +121,7 @@
 <meta property="og:image" content="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/jje2mG8CK1.png">
 <meta property="og:image" content="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/JBAJ1H2DB4.png">
 <meta property="og:image" content="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/a3Ll301CD6.png">
-<meta property="og:updated_time" content="2017-10-18T11:55:35.581Z">
+<meta property="og:updated_time" content="2017-10-18T12:03:53.139Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="perl语言中的字符串处理及排序">
 <meta name="twitter:description" content="生物信息中的数据是以字符串形式呈现的，而perl语言90%的常用功能都在处理字符串上。所以我用了一些时间来学习这些处理字符串的手段。比较重要的是index，substr，sort。  首先是姐妹花index和rindex  index 从左边开始给出匹配字符的首字符位置 rindex 从右边开始给出匹配字符的首字符位置  注意:字符串的第一个位置为0因为放假没办法用到服务器，所以perl语言的学习">
@@ -397,7 +397,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-10-18T19:55:35+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2017-10-18T20:03:53+08:00">
                 2017-10-18
               </time>
             
@@ -496,7 +496,7 @@
 <li><strong>index</strong> 从<strong>左边</strong>开始给出匹配字符的首字符位置</li>
 <li><strong>rindex</strong> 从<strong>右边</strong>开始给出匹配字符的首字符位置</li>
 </ul>
-<p>注意:字符串的第一个位置为0<br>因为放假没办法用到服务器，所以perl语言的学习全是在mac电脑的终端完成的，其实和linux的终端完全一样。<br>下面我们设计了一个字符串，他有两个ATG，第一个ATG的A的位置为0，第二个ATG的A的位置为15，我们试一下:<br><img src="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/f7LDaf8mf9.png" alt="mark"><br><img src="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/HHc1L4Jd1i.png" alt="mark"><br>index和rindex有三个参数，第一个为要匹配的序列，第二个为目标字符串，第三个为开始匹配的位置（这个参数可选），当index匹配不到字符串时返回-1，例子中，第四个我们让他从第20个字符开始查找ATG，实际上没有20之后没有ATG了，所以返回值为-1<br><a id="more"></a></p>
+<p>注意:字符串的第一个位置为0<br>因为放假没办法用到服务器，所以perl语言的学习全是在mac电脑的终端完成的，其实和linux的终端完全一样。<br>下面我们设计了一个字符串，他有两个ATG，第一个ATG的A的位置为0，第二个ATG的A的位置为15，我们试一下:<br><a id="more"></a><br><img src="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/f7LDaf8mf9.png" alt="mark"><br><img src="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/HHc1L4Jd1i.png" alt="mark"><br>index和rindex有三个参数，第一个为要匹配的序列，第二个为目标字符串，第三个为开始匹配的位置（这个参数可选），当index匹配不到字符串时返回-1，例子中，第四个我们让他从第20个字符开始查找ATG，实际上没有20之后没有ATG了，所以返回值为-1</p>
 <hr>
 <p>既然可以查找字符串的位置，那么就自然想到截取一段序列，这时候要用到substr函数（其实这个概念我是从excel中知道的）<br>还是刚才那个序列，这次的目的是：提取出第二个ATG开始到最后一个TAA结束的序列：<br>思路就是知道要截取的序列，知道开始位置，知道截取长度就可以了。<br><img src="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/HjBe6fGb6h.png" alt="mark"><br><img src="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/8h8Ii74906.png" alt="mark"><br>成功，这里substr也有三个参数，第一个为要匹配的序列，第二个为开始的位置，第三个为匹配的长度。</p>
 <hr>
