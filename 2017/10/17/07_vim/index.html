@@ -96,10 +96,12 @@
 <meta property="og:site_name" content="果子学生信">
 <meta property="og:description" content="做生信要写代码，写代码就需要编辑器，在linux系统下有一款编辑器不能被忽略，就是VIM，江湖人称编辑器之神。当然，在一堆程序员里面千万不要讨论语言的好坏，也不能突然冒一句perl是世界上最好的脚本语言，不能，千万不能，要不然死的很难看。 所以讨论编辑器时也不能随便说哪个最好，人们常说vim是编辑器之神，继而又说他的对手emacs是神的编辑器。绕来绕去就是为了一个名分，所谓树争一身皮，编辑器争一口">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-18T08:42:21.993Z">
+<meta property="og:image" content="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/9AdKI49D5I.jpg">
+<meta property="og:updated_time" content="2017-10-18T11:00:34.597Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="编辑器之神VIM的使用及配置">
 <meta name="twitter:description" content="做生信要写代码，写代码就需要编辑器，在linux系统下有一款编辑器不能被忽略，就是VIM，江湖人称编辑器之神。当然，在一堆程序员里面千万不要讨论语言的好坏，也不能突然冒一句perl是世界上最好的脚本语言，不能，千万不能，要不然死的很难看。 所以讨论编辑器时也不能随便说哪个最好，人们常说vim是编辑器之神，继而又说他的对手emacs是神的编辑器。绕来绕去就是为了一个名分，所谓树争一身皮，编辑器争一口">
+<meta name="twitter:image" content="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/9AdKI49D5I.jpg">
 
 
 
@@ -371,7 +373,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-10-18T16:42:21+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2017-10-18T19:00:34+08:00">
                 2017-10-18
               </time>
             
@@ -464,8 +466,11 @@
 
       
         <p>做生信要写代码，写代码就需要编辑器，在linux系统下有一款编辑器不能被忽略，就是VIM，江湖人称编辑器之神。当然，在一堆程序员里面千万不要讨论语言的好坏，也不能突然冒一句perl是世界上最好的脚本语言，不能，千万不能，要不然死的很难看。</p>
-<p>所以讨论编辑器时也不能随便说哪个最好，人们常说vim是编辑器之神，继而又说他的对手emacs是神的编辑器。绕来绕去就是为了一个名分，所谓树争一身皮，编辑器争一口气。<br>VIM用好了以后的状态是这样子的：<br>&gt;<br>写过程序的人都知道，编程的时候双手大部分时间都放在键盘上，或编码、或插入、或移动、或定位、或查找，这种连续操作的时间和频率远远大于阅读、翻页、设置字体、摆弄样式等文案工作，而二者往往产生很多停顿和间隙，而编程时的停顿是非常影响编程效率的，所以 Vim 的设计理念就是通过模式的转换、命令的组合和不计其数的插件，保证程序员在编程的过程中，双手尽可能保留在键盘中央的区域，并且，<strong>不需要鼠标</strong>。</p>
-<p>大多人看不起VIM的原因可能有一个：VIM上手容易，但学习曲线陡峭，很多人没有学会就放弃了。这不是我说的，是池建强老师说的。VIM的故事和详细用法可以查看池建强老师写的VIM系列，最终他把这个系列写成了一篇长文，<a href="http://mp.weixin.qq.com/s?__biz=MjM5ODQ2MDIyMA==&amp;mid=2650712546&amp;idx=1&amp;sn=c4db99547b75d6001b3cfaa6cbc0e715&amp;scene=21#wechat_redirect" target="_blank" rel="external">说，谁才是最帅的编程工具？</a>十分精彩，我觉得可以去读一读。微信不能外部链接，我把他放在了阅读原文里面。<br><a id="more"></a><br>VIM内置在linux系统下，在命令行输入 vim 然后enter键，就可以看到vim<br>vim的上手很简单，他有四种模式<br>&gt;</p>
+<p>所以讨论编辑器时也不能随便说哪个最好，人们常说vim是编辑器之神，继而又说他的对手emacs是神的编辑器。绕来绕去就是为了一个名分，所谓树争一身皮，编辑器争一口气。<br>VIM用好了以后的状态是这样子的：</p>
+<blockquote>
+<p>写过程序的人都知道，编程的时候双手大部分时间都放在键盘上，或编码、或插入、或移动、或定位、或查找，这种连续操作的时间和频率远远大于阅读、翻页、设置字体、摆弄样式等文案工作，而二者往往产生很多停顿和间隙，而编程时的停顿是非常影响编程效率的，所以 Vim 的设计理念就是通过模式的转换、命令的组合和不计其数的插件，保证程序员在编程的过程中，双手尽可能保留在键盘中央的区域，并且，<strong>不需要鼠标</strong>。<br><a id="more"></a></p>
+</blockquote>
+<p>大多人看不起VIM的原因可能有一个：VIM上手容易，但学习曲线陡峭，很多人没有学会就放弃了。这不是我说的，是池建强老师说的。VIM的故事和详细用法可以查看池建强老师写的VIM系列，最终他把这个系列写成了一篇长文，<a href="http://mp.weixin.qq.com/s?__biz=MjM5ODQ2MDIyMA==&amp;mid=2650712546&amp;idx=1&amp;sn=c4db99547b75d6001b3cfaa6cbc0e715&amp;scene=21#wechat_redirect" target="_blank" rel="external">说，谁才是最帅的编程工具？</a>十分精彩，我觉得可以去读一读。微信不能外部链接，我把他放在了阅读原文里面。<br>VIM内置在linux系统下，在命令行输入 vim 然后enter键，就可以看到vim<br>vim的上手很简单，他有四种模式</p>
 <ul>
 <li>普通模式：Vim 启动后的默认模式，用来移动光标、删除文本、覆盖输入文本、恢复操作、粘贴文本等等。</li>
 <li>插入模式：输入 i 或 a 进入插入模式，在这个模式下敲击键盘会往文字缓冲区增加文字，相当于普通编辑器的编辑模式。</li>
@@ -482,7 +487,7 @@
 <p>##VIM的配置<br>切换到家目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd ~</div></pre></td></tr></table></figure></p>
 <p>创建.vimrc文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim .vimrc</div></pre></td></tr></table></figure></p>
 <p>进入插入模式，复制下面代码，右击鼠标粘贴，不能是使用ctrl+V<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">filetype on</div><div class="line">syntax on</div><div class="line">set nu</div><div class="line">set cindent</div><div class="line">set ruler</div><div class="line">set tabstop=4</div><div class="line">set softtabstop=4</div><div class="line">set expandtab</div><div class="line">set shiftwidth=4</div><div class="line">set backspace=indent,eol,start</div><div class="line">set completeopt=preview,menu</div><div class="line">set cursorline</div><div class="line">set magic</div><div class="line">set autoindent</div><div class="line">set smartindent</div><div class="line">set showmatch</div><div class="line">set history=1000</div><div class="line">set nobackup</div><div class="line">set noswapfile</div><div class="line">set ignorecase</div><div class="line">set hlsearch</div><div class="line">set incsearch</div><div class="line">inoremap &apos; &apos;&apos;&lt;ESC&gt;i</div><div class="line">inoremap &quot; &quot;&quot;&lt;ESC&gt;i</div><div class="line">inoremap ( ()&lt;ESC&gt;i</div><div class="line">inoremap [ []&lt;ESC&gt;i</div><div class="line">inoremap &lt; &lt;&gt;&lt;ESC&gt;i</div><div class="line">inoremap &#123; &#123;&#125;&lt;ESC&gt;i</div><div class="line">set guifont=Bitstream_Vera_Sans_Mono:h10:cANSI</div></pre></td></tr></table></figure></p>
-<p>好了现在使用编辑器就有那种花花绿绿的感觉了，这是我写的一个perl程序：</p>
+<p>好了现在使用编辑器就有那种花花绿绿的感觉了，这是我写的一个perl程序：<br><img src="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/9AdKI49D5I.jpg" alt="mark"></p>
 
       
     </div>
