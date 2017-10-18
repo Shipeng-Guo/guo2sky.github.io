@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://guo2sky.github.io/"/>
-  <updated>2017-10-18T11:26:46.066Z</updated>
+  <updated>2017-10-18T12:02:06.259Z</updated>
   <id>https://guo2sky.github.io/</id>
   
   <author>
@@ -15,6 +15,59 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>perl语言中文件句柄和参数设置的理解</title>
+    <link href="https://guo2sky.github.io/2017/10/18/11-perl-handle/"/>
+    <id>https://guo2sky.github.io/2017/10/18/11-perl-handle/</id>
+    <published>2017-10-18T11:56:13.000Z</published>
+    <updated>2017-10-18T12:02:06.259Z</updated>
+    
+    <content type="html"><![CDATA[<p>这是过年期间的学习笔记，这段时间被标书虐的死去活来，休息的时候编辑了，这样提交完标书就可以学习RNA-seq了。<br><strong>文件句柄</strong> 这个概念光看字面完全不知所措，但是当我处理了一些数据时慢慢就能够理解。向别人解释一个概念最好的方法是类比，小时候听老师说地球就像鸡蛋，一下就理解了。目前我找到的能解释文件句柄的好类比就是：<br>摆渡船，没错，文件句柄就像摆渡船，他每次去对岸接一定人数的客人到这边来。而文件句柄的作用就是按照你的要求每次从文件中取出一部分数据供你处理。<br>下面举例子来理解：<br>我们要把几个序列格式化输出，要求每行60个字符。<br>原始文件如下：每一个&gt;开头的是一个序列文件，写到这里我突然间就有点伤感，这些东西我是知道的，为什么我还要写下来，给谁看呢，那么多的人在学python，只有少数人在用perl，Larry wall知道了是不是要很生气。我编辑的不是文案，我只是在拼凑破碎的心。<br><a id="more"></a><br>你可以看到每一个序列在每行的长度不一样。<br><img src="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/13hgG9ifE8.png" alt="mark"><br>总共5个序列，想要让他们按照每一行60个字母呈现出来<br>我打开VIM，写下一下的代码，然后注释了一下。<br><img src="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/3gJgI95JId.png" alt="mark"><br>运行程序后屏幕上显示：<br><img src="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/IalE51e7lD.png" alt="mark"><br>说明成功了，那么这时候出现两个问题：</p><ul><li>如果我处理其他文本这么办？</li><li>如果我想每行50个字母，40个字母怎么办？<br>为了解决这个问题，需要引入<strong>参数</strong>这个概念：<br>在原有脚本的基础上，修改两个地方<br><img src="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/j2KLBgf8kl.png" alt="mark"><br>这时候假如要实现50字母每行，那么就在终端输入：<br><img src="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/CCED0m2DKl.png" alt="mark"><br>屏幕上显示：<br><img src="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/B4KhgHkJDB.png" alt="mark"><br>这样我们就算成功了，此时我注意到我在一开始创建测试文件need_cahnge.fa时把scafald写错了，正确的单词应该是Scaffold，所以我准备使用pl程序把他修改好，并且输出到一个新的文件changed.fa<br><img src="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/Ag51LE0EdL.png" alt="mark"><br>终端输入下列命令：<br><img src="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/E27CcE5i75.png" alt="mark"><br>这个命令由四个部分组成：</li><li>第一个部分是perl，这是所有执行perl程序都需要的</li><li>第二个部分为perl程序的名称</li><li>第三个部分为第一个参数，就是输入的文件名</li><li>第四个部分为第二个参数，就是输出的文件名<br>最后得到的结果如下：<br><img src="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/IDjI0j2F45.png" alt="mark"><br>看吧，名称已经换掉了。<br>我想我应该理解perl语言的文件句柄了。<br>实际上当我再次会看这个笔记的时候，我发现我陷入了怪圈，这个例子纯粹是为了将参数的作用<br>要替换一个文本里面的单词，为什么我不直接使用全局替换呢，整这么麻烦还沾沾自喜。</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这是过年期间的学习笔记，这段时间被标书虐的死去活来，休息的时候编辑了，这样提交完标书就可以学习RNA-seq了。&lt;br&gt;&lt;strong&gt;文件句柄&lt;/strong&gt; 这个概念光看字面完全不知所措，但是当我处理了一些数据时慢慢就能够理解。向别人解释一个概念最好的方法是类比，小时候听老师说地球就像鸡蛋，一下就理解了。目前我找到的能解释文件句柄的好类比就是：&lt;br&gt;摆渡船，没错，文件句柄就像摆渡船，他每次去对岸接一定人数的客人到这边来。而文件句柄的作用就是按照你的要求每次从文件中取出一部分数据供你处理。&lt;br&gt;下面举例子来理解：&lt;br&gt;我们要把几个序列格式化输出，要求每行60个字符。&lt;br&gt;原始文件如下：每一个&amp;gt;开头的是一个序列文件，写到这里我突然间就有点伤感，这些东西我是知道的，为什么我还要写下来，给谁看呢，那么多的人在学python，只有少数人在用perl，Larry wall知道了是不是要很生气。我编辑的不是文案，我只是在拼凑破碎的心。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="生物信息" scheme="https://guo2sky.github.io/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF/"/>
+    
+    
+      <category term="Perl" scheme="https://guo2sky.github.io/tags/Perl/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>perl语言中的字符串处理及排序</title>
+    <link href="https://guo2sky.github.io/2017/10/18/10-perl-string/"/>
+    <id>https://guo2sky.github.io/2017/10/18/10-perl-string/</id>
+    <published>2017-10-18T11:44:47.000Z</published>
+    <updated>2017-10-18T11:55:35.581Z</updated>
+    
+    <content type="html"><![CDATA[<p>生物信息中的数据是以字符串形式呈现的，而perl语言90%的常用功能都在处理字符串上。所以我用了一些时间来学习这些处理字符串的手段。<br>比较重要的是index，substr，sort。</p><hr><p>首先是姐妹花index和rindex</p><ul><li><strong>index</strong> 从<strong>左边</strong>开始给出匹配字符的首字符位置</li><li><strong>rindex</strong> 从<strong>右边</strong>开始给出匹配字符的首字符位置</li></ul><p>注意:字符串的第一个位置为0<br>因为放假没办法用到服务器，所以perl语言的学习全是在mac电脑的终端完成的，其实和linux的终端完全一样。<br>下面我们设计了一个字符串，他有两个ATG，第一个ATG的A的位置为0，第二个ATG的A的位置为15，我们试一下:<br><img src="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/f7LDaf8mf9.png" alt="mark"><br><img src="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/HHc1L4Jd1i.png" alt="mark"><br>index和rindex有三个参数，第一个为要匹配的序列，第二个为目标字符串，第三个为开始匹配的位置（这个参数可选），当index匹配不到字符串时返回-1，例子中，第四个我们让他从第20个字符开始查找ATG，实际上没有20之后没有ATG了，所以返回值为-1<br><a id="more"></a></p><hr><p>既然可以查找字符串的位置，那么就自然想到截取一段序列，这时候要用到substr函数（其实这个概念我是从excel中知道的）<br>还是刚才那个序列，这次的目的是：提取出第二个ATG开始到最后一个TAA结束的序列：<br>思路就是知道要截取的序列，知道开始位置，知道截取长度就可以了。<br><img src="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/HjBe6fGb6h.png" alt="mark"><br><img src="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/8h8Ii74906.png" alt="mark"><br>成功，这里substr也有三个参数，第一个为要匹配的序列，第二个为开始的位置，第三个为匹配的长度。</p><hr><p>这里我们自然而言地想到，可以截取出一段序列，那么将它替换成其他序列便是举手之劳：<br><img src="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/FcmFlAA7Bm.png" alt="mark"><br><img src="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/a3JHCl9lJj.png" alt="mark"><br>实际上，这里的substr功能完全可以用正则表达式来实现，本次不作介绍。</p><hr><p>我们再看看处理的序列由碱基ATCG组成，对于生信工作者而言，把他转换成互补序列，反向序列，反向互补序列也应该成为正常需求。<br>其中反向序列，很好实现，用reverse函数即可，而互补序列用正则表达式的转换功能tr即可(正则表达式有三种模式，匹配，替换，转换)，反向互补序列把得到的互补序列reverse即可：<br><img src="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/2ehmjgK2BA.png" alt="mark"><br><img src="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/iFifhDlbD7.png" alt="mark"></p><hr><p>那么我们再进一步，如何分割字符串呢？用split函数，实际上到了这里我们发现，perl语言中的命令完全就是日常用语，可能原因是，perl的发明者本身就是语言学家，那么设计语言时最好满足自然语义。<br>首先创建一个逗号分隔的字符串，然后尝试几种split分隔的模式及其返回的结果，学习perl语言光看书不行，必须要动手操作，在一个终端里面即时反馈，错了就调试。<br><img src="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/ilI0aDb8iA.png" alt="mark"><br><img src="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/eeG7fAiAfI.png" alt="mark"><br>split的基本用法就是两个参数，返回的是数组，从\@split4可以看出来(4)，如果使用标量上下文返回的是数组元素的个数(1)，如果在末尾加上第三个参数，数字参数，就是限定最终切割的个数，如果是1就是不切割(2,3)，因为split返回的是数组，所以可以使用 []访问数组中的元素(6,7,8,9)，还可以同时命名三个标量，分别赋值见ABC。</p><hr><p>我们可以分割字符，也可以让他们再次连接在一起，而且可以定义连接的方式<br>使用join函数；实际上split和join就是相反的过程：<br><img src="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/7AEefbacj3.png" alt="mark"><br><img src="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/2j7h4LAjkJ.png" alt="mark"></p><hr><p>此时，那些基本的求序列长度，去掉序最后一个字符，字符大小写转换，首字母大小写也需要一并掌握，实际上这时候会感觉很简单：<br><img src="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/HifFD0L515.png" alt="mark"><br><img src="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/9hDh77gjFj.png" alt="mark"><br> 一开始序列长度为56，使用chop切掉末尾的T后只剩下56个，使用lc转换成小写，再使用uc转换成大写，使用lcfirst将首字母小写，使用ucfirst将首字母大写，最后尝试了另外的转换大小写的方式。</p><hr><p>##sort排序功能特别重要<br>perl提供了飞碟操作符：</p><ul><li>\$a &lt;=&gt; \$b 数字大小排序</li><li>\$a cmp \$b 字母顺序排序</li></ul><p>数字排序：<br><img src="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/ABD2J7DEGK.png" alt="mark"><br><img src="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/lIAHi09AFd.png" alt="mark"><br>使用sort直接排序并不能按数字大小排序<br>字母排序：<br>借助字母的排序我测试了几种排序的方法以实现不同的效果<br><img src="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/7I79j70L22.png" alt="mark"><br><img src="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/5i6g7gmi2m.png" alt="mark"><br>通过测试，我发现：</p><ul><li>sort和cmp效果相同(1-2)</li><li>四种忽略大小写的方法都可以实现相同的结果(3-6)</li><li>调换\$a和\$b的位置可以实现和reverse一样的功能(7-8)</li><li>对sort后的数组再用cmp排序可以实现按字母排序，并且大写字母在前(9)</li><li>我想怎么实现小写字母在前呢？在9的基础上，增加判断语句，当两个字母相同时，让小写字母在前面(10)</li></ul><hr><p>借助10的结果，学习一下\$a cmp \$b以及 \$a &lt;=&gt; \$b的功能，实际上他们是sort的一个参数<br>我们先看一下sort的用法</p><ul><li>直接使用,就是sort @array</li><li>自定义排序<br>sort {sub rule} @files<br>{}中就是排序的原则，\$a &lt;=&gt; \$b的意思就是按数字从小到大排序，\$a cmp \$b<br>就是按字母顺序排序，\$，\$b是系统的全局变量，我们记住有这样的用法即可，其中\$a cmp \$b以及 \$a &lt;=&gt; \$b是有返回值的。<br><img src="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/85d6a824mg.png" alt="mark"><br>此时我们再来理解10的表达式，如果前面两个字母相同，那么返回值就是0，or和||的意思就是如果前面是假则执行后面的程序。<br>这种方法在hash的排序中也有广泛的使用。</li></ul><hr><p>##关于hash的排序<br>准确的说，hash是不能排序的，能够排序的是hash的键名和键值<br>我们先按照键名来排序：<br><img src="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/6ifcD5795m.png" alt="mark"><br><img src="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/GD6bj4l53g.png" alt="mark"><br>实际上生活中更常见的是按照分数从大到小排序，用\$score{$a},表示键名对应的键值：<br><img src="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/7ElHg1jceA.png" alt="mark"><br><img src="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/jje2mG8CK1.png" alt="mark"><br>我们发现，95分有两个人，我们希望当分数一样的安装名称的字母排序<br><img src="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/JBAJ1H2DB4.png" alt="mark"><br><img src="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/a3Ll301CD6.png" alt="mark"></p><hr><p>我想我应该已经入门perl字符串的处理了。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;生物信息中的数据是以字符串形式呈现的，而perl语言90%的常用功能都在处理字符串上。所以我用了一些时间来学习这些处理字符串的手段。&lt;br&gt;比较重要的是index，substr，sort。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;首先是姐妹花index和rindex&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;index&lt;/strong&gt; 从&lt;strong&gt;左边&lt;/strong&gt;开始给出匹配字符的首字符位置&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;rindex&lt;/strong&gt; 从&lt;strong&gt;右边&lt;/strong&gt;开始给出匹配字符的首字符位置&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;注意:字符串的第一个位置为0&lt;br&gt;因为放假没办法用到服务器，所以perl语言的学习全是在mac电脑的终端完成的，其实和linux的终端完全一样。&lt;br&gt;下面我们设计了一个字符串，他有两个ATG，第一个ATG的A的位置为0，第二个ATG的A的位置为15，我们试一下:&lt;br&gt;&lt;img src=&quot;http://oy0a9ohwa.bkt.clouddn.com/blog/171018/f7LDaf8mf9.png&quot; alt=&quot;mark&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://oy0a9ohwa.bkt.clouddn.com/blog/171018/HHc1L4Jd1i.png&quot; alt=&quot;mark&quot;&gt;&lt;br&gt;index和rindex有三个参数，第一个为要匹配的序列，第二个为目标字符串，第三个为开始匹配的位置（这个参数可选），当index匹配不到字符串时返回-1，例子中，第四个我们让他从第20个字符开始查找ATG，实际上没有20之后没有ATG了，所以返回值为-1&lt;br&gt;
+    
+    </summary>
+    
+      <category term="生物信息" scheme="https://guo2sky.github.io/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF/"/>
+    
+    
+      <category term="字符串" scheme="https://guo2sky.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    
+      <category term="Perl" scheme="https://guo2sky.github.io/tags/Perl/"/>
+    
+  </entry>
   
   <entry>
     <title>可能是最好用的TCGA数据库GEPIA</title>
