@@ -31,8 +31,8 @@
         <category>生物信息</category>
       </categories>
       <tags>
-        <tag>数据库</tag>
         <tag>TCGA</tag>
+        <tag>数据库</tag>
         <tag>GEPIA</tag>
       </tags>
   </entry>
@@ -83,8 +83,8 @@
         <category>生物信息</category>
       </categories>
       <tags>
-        <tag>数据库</tag>
         <tag>TCGA</tag>
+        <tag>数据库</tag>
       </tags>
   </entry>
   <entry>
@@ -113,7 +113,7 @@
   <entry>
     <title><![CDATA[R语言资源汇总]]></title>
     <url>%2F2017%2F10%2F17%2F01_R_resource%2F</url>
-    <content type="text"><![CDATA[强烈推荐：这是DataCamp 的联合创始人 Martijn Theuwissen写的7步从零开始学习R，里面汇集了从0到高手需要的大部分资料，全部都是英文，并且给出了每个资源的链接。假如你的时间有限，这一篇一定要看。R Learning Path: From beginner to expert in R in 7 steps英文读不下去，可以先看一下这一篇中文介绍七步即可学会R语言，从此数据分析不再怕！当你入门了R语言后，看看这篇文章，里面总结了大部分数据处理时会用到的Ｒ包：RStartHere不想看英文，这是中文版本：学习R语言，一篇文章让你从懵圈到入门R for Data Science Hadley Wickham重新规范了数据处理的流程这本书相当于是给神包tidyverse的实战版，有书籍，也有网络免费版本，写得很好，强烈推荐。当你掌握了R的基本操作，能独立做分析，想提高可以看一下Hadley Wickham的这本书，我看到很多高手推荐：Advanced R第二版 以下的资源中除了中文资料，大部分内容都已经在第一个链接中推荐过 交互教程（适合入门）下面的课程我自己用过，这种循序渐进，一路保护的感觉，可以让你迅速入门你不需要下载R，安装包，就跟着他们走，就OK了。极其友好的的入门教程，全程走下来大概两个多小时，配合中文教程，急速入门Try R，注意要一口气学完，因为他没办法记录进度。 我更推荐的是这个来自Datacamp的入门教程，专业的入门教程，不需要任何背景，跟着教程走即可：Introduction to RDatacamp有完整的R语言英文教程，都能听得懂，名字叫Data Scientist with R，需要花费95小时。课程设置很有技巧，循序渐进。 网页：中文R语言网页教程，作为储备，防止看不懂英文：https://www.w3cschool.cn/r/r_overview.html英文R语言极简教程：http://www.r-tutor.com/r-introduction生信技能树骨干赵飞同学写的R必备基础知识R语言各个包里面的数据集 书籍：《R in Action》中文名称R语言实战，目前已经到了第二版《The Art of_R Programming》帮助Y叔入门R的电子书 http://www.burns-stat.com/documents/books/the-r-inferno/http://www.cookbook-r.com/这本小书是介绍R语言在生物信息学里面应用的a Little Book of R for Bioinformatics!JIMMY推荐的R语言大神回顾踩过的坑R语言忍者秘笈 R语言绘图：《ggplot2：数据分析与图形艺术》生物学家应该这样学R绘图-视频，数据，代码全公开Be Awesome in ggplot2: A Practical Guide to be Highly Effective - R software and data visualization严涛的翻译版本如下：ggplot2高效实用指南ggplot2高效实用指南（续） Bioconductor约翰•霍普金斯大学的Bioconductor学习课程斯坦福大学的暑期小课程-用bioconductor做统计分析 高人指点：苦口婆心无比真诚的大神Jimmy–【生信菜鸟经】如何系统入门R语言独树一帜的大神Y叔–听说你想学R？银河统计：http://www.cnblogs.com/cloudtj/articles/5148848.html可爱的jimmy借鉴了这篇文章的第一段话 博客：Y叔的博客（博客排版有待提高）http://guangchuangyu.github.io/粉丝日志(强烈推荐)博主是张丹 http://blog.fens.me/他写了一系列关于R的文章 http://blog.fens.me/series-r/目前他主要从事量化交易软件的开发银河统计：这里汇总了关于R的56篇文章 http://www.cnblogs.com/cloudtj/category/780800.html任坤的博客，他是rlsit,pipeR的作者，他还写了一本书Learning R Programminghttp://renkun.me/生物日志-鸣一道糗世界 好像挂了谢益辉Rmarkdown的作者，现在为Rstudio工作，我看过他的采访，说自己写作业排版太麻烦，特别愤怒的开发了Rmarkdown。严涛 浙江大学作物遗传育种在读研究生可视化做得非常好！！ 微信公众号： Ｒ语言中文社区 每天进步一点点2015，主要集中在R语言和Python的学习上，从数据分析到机器学习 R语言 生信者言]]></content>
+    <content type="text"><![CDATA[强烈推荐：这是DataCamp 的联合创始人 Martijn Theuwissen写的7步从零开始学习R，里面汇集了从0到高手需要的大部分资料，全部都是英文，并且给出了每个资源的链接。假如你的时间有限，这一篇一定要看。R Learning Path: From beginner to expert in R in 7 steps英文读不下去，可以先看一下这一篇中文介绍七步即可学会R语言，从此数据分析不再怕！当你入门了R语言后，看看这篇文章，里面总结了大部分数据处理时会用到的Ｒ包：RStartHere不想看英文，这是中文版本：学习R语言，一篇文章让你从懵圈到入门R for Data Science Hadley Wickham重新规范了数据处理的流程这本书相当于是给神包tidyverse的实战版，有书籍，也有网络免费版本，写得很好，强烈推荐。当你掌握了R的基本操作，能独立做分析，想提高可以看一下Hadley Wickham的这本书，我看到很多高手推荐：Advanced R第二版 以下的资源中除了中文资料，大部分内容都已经在第一个链接中推荐过 交互教程（适合入门）下面的课程我自己用过，这种循序渐进，一路保护的感觉，可以让你迅速入门你不需要下载R，安装包，就跟着他们走，就OK了。极其友好的的入门教程，全程走下来大概两个多小时，配合中文教程，急速入门Try R，注意要一口气学完，因为他没办法记录进度。 我更推荐的是这个来自Datacamp的入门教程，专业的入门教程，不需要任何背景，跟着教程走即可：Introduction to RDatacamp有完整的R语言英文教程，都能听得懂，名字叫Data Scientist with R，需要花费95小时。课程设置很有技巧，循序渐进。 网页：中文R语言网页教程，作为储备，防止看不懂英文：https://www.w3cschool.cn/r/r_overview.html英文R语言极简教程：http://www.r-tutor.com/r-introduction生信技能树骨干赵飞同学写的R必备基础知识R语言各个包里面的数据集 书籍：《R in Action》中文名称R语言实战，目前已经到了第二版《The Art of_R Programming》帮助Y叔入门R的电子书 http://www.burns-stat.com/documents/books/the-r-inferno/http://www.cookbook-r.com/这本小书是介绍R语言在生物信息学里面应用的a Little Book of R for Bioinformatics!JIMMY推荐的R语言大神回顾踩过的坑R语言忍者秘笈CRAN总结的很多电子书 R语言绘图：《ggplot2：数据分析与图形艺术》生物学家应该这样学R绘图-视频，数据，代码全公开Be Awesome in ggplot2: A Practical Guide to be Highly Effective - R software and data visualization严涛的翻译版本如下：ggplot2高效实用指南ggplot2高效实用指南（续） Bioconductor约翰•霍普金斯大学的Bioconductor学习课程斯坦福大学的暑期小课程-用bioconductor做统计分析 高人指点：苦口婆心无比真诚的大神Jimmy–【生信菜鸟经】如何系统入门R语言独树一帜的大神Y叔–听说你想学R？银河统计：http://www.cnblogs.com/cloudtj/articles/5148848.html可爱的jimmy借鉴了这篇文章的第一段话 博客：Y叔的博客（博客排版有待提高）http://guangchuangyu.github.io/粉丝日志(强烈推荐)博主是张丹 http://blog.fens.me/他写了一系列关于R的文章 http://blog.fens.me/series-r/目前他主要从事量化交易软件的开发银河统计：这里汇总了关于R的56篇文章 http://www.cnblogs.com/cloudtj/category/780800.html任坤的博客，他是rlsit,pipeR的作者，他还写了一本书Learning R Programminghttp://renkun.me/生物日志-鸣一道糗世界 好像挂了谢益辉Rmarkdown的作者，现在为Rstudio工作，我看过他的采访，说自己写作业排版太麻烦，特别愤怒的开发了Rmarkdown。严涛 浙江大学作物遗传育种在读研究生可视化做得非常好！！ 微信公众号： Ｒ语言中文社区 每天进步一点点2015，主要集中在R语言和Python的学习上，从数据分析到机器学习 R语言 生信者言]]></content>
       <categories>
         <category>生物信息</category>
       </categories>
