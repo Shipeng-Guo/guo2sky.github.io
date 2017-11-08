@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://guoshipeng.com/about/index.html</loc>
+    
+    <lastmod>2017-11-08T03:07:16.917Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://guoshipeng.com/2017/11/06/12-ubuntu-and-R/</loc>
     
     <lastmod>2017-11-06T10:24:26.348Z</lastmod>
@@ -61,13 +68,6 @@
     <loc>http://guoshipeng.com/2017/10/17/04-TCGA/</loc>
     
     <lastmod>2017-10-18T09:27:19.124Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://guoshipeng.com/about/index.html</loc>
-    
-    <lastmod>2017-10-18T09:25:00.255Z</lastmod>
     
   </url>
   
