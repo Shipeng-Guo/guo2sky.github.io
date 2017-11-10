@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[多个同样的行列式文件合并起来]]></title>
+    <url>%2F2017%2F11%2F10%2F14-R-for-binding-colums%2F</url>
+    <content type="text"><![CDATA[今天在论坛学习TCGA-RNA seq的处理，看见这样一道题，生信编程直播第四题：多个同样的行列式文件合并起来想起当时R语言不熟练，根本不敢去看，今天尝试解决一下，原来如此简单。这也是一个收集教案的过程，以后在课上的例子会生动需对，这一道题可以用来讲解for循环。下载数据，解压到GSE48213_RAW，list.files用于列出文件夹下所包含的文件名inner_join和merge函数一样123456789library(dplyr)nameList &lt;- list.files(&quot;GSE48213_RAW/&quot;)matrix &lt;- read.table(paste0(&quot;GSE48213_RAW/&quot;,nameList[1]),header = T)for (i in 2:length(nameList))&#123; matrix &lt;- inner_join(matrix, read.table(paste0(&quot;GSE48213_RAW/&quot;,nameList[i]),header = T), by=&quot;EnsEMBL_Gene_ID&quot;)&#125;save(matrix,file = &quot;56_cell_expression.Rda&quot;)]]></content>
+      <categories>
+        <category>生物信息</category>
+      </categories>
+      <tags>
+        <tag>R</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[在Rstudio server中R的多版本切换]]></title>
     <url>%2F2017%2F11%2F10%2F13-two-versions-of-R%2F</url>
     <content type="text"><![CDATA[本次记录是为了自己查看：在前一篇文章中，我自己编译了一个R 安装R version 3.4.2 Patched下载地址:https://stat.ethz.ch/R/daily/123456tar -xf R-patched_2017-11-05.tar.gzsudo apt-get build-dep r-base-dev./configure --enable-R-shlib=yesmakemake checksudo make install 在terminal中使用1which R /usr/local/bin/R 那么Rstudio会默认使用这个R 今天又安装了一个新的R，不是编译的1sudo apt-get install r-base 在终端中1/usr/bin/R 可以打开这个新的版本如果想要能够在Rstudio server中切换1sudo vim /etc/rstudio/rserver.conf 在里面写入 rsession-which-r=/usr/bin/R也可以是rsession-which-r=/usr/lib/R 这时候重启Rstudio server ，新开一个session就可以看到版本已经改过来了如果要回到之前的版本在/etc/rstudio/rserver.conf修改即可 rsession-which-r=/usr/local/bin/R也可以是rsession-which-r=/usr/local/lib/R 这个是修改Rstuido中默认的R版本，同时我们可以自定义每个用户的R默认版本，方法如下http://docs.rstudio.com/ide/server-pro/r-versions.html#r-versions内容真实丰富，暂时没搞懂，不过这个文档不错。 本文参考文章：https://support.rstudio.com/hc/en-us/articles/200486138-Using-Different-Versions-of-R]]></content>
@@ -43,8 +54,8 @@
         <category>生物信息</category>
       </categories>
       <tags>
-        <tag>字符串</tag>
         <tag>Perl</tag>
+        <tag>字符串</tag>
       </tags>
   </entry>
   <entry>
@@ -130,8 +141,8 @@
         <category>生物信息</category>
       </categories>
       <tags>
-        <tag>机器学习</tag>
         <tag>资源</tag>
+        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -142,8 +153,8 @@
         <category>生物信息</category>
       </categories>
       <tags>
-        <tag>资源</tag>
         <tag>R</tag>
+        <tag>资源</tag>
       </tags>
   </entry>
 </search>

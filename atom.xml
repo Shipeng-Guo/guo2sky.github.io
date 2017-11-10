@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://guoshipeng.com/"/>
-  <updated>2017-11-10T06:30:18.811Z</updated>
+  <updated>2017-11-10T11:01:50.146Z</updated>
   <id>http://guoshipeng.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>多个同样的行列式文件合并起来</title>
+    <link href="http://guoshipeng.com/2017/11/10/14-R-for-binding-colums/"/>
+    <id>http://guoshipeng.com/2017/11/10/14-R-for-binding-colums/</id>
+    <published>2017-11-10T11:00:19.000Z</published>
+    <updated>2017-11-10T11:01:50.146Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天在论坛学习TCGA-RNA seq的处理，看见这样一道题，<br><a href="http://www.biotrainee.com:8080/thread-603-1-1.html" target="_blank" rel="external">生信编程直播第四题：多个同样的行列式文件合并起来</a><br>想起当时R语言不熟练，根本不敢去看，今天尝试解决一下，原来如此简单。<br>这也是一个收集教案的过程，以后在课上的例子会生动需对，这一道题可以用来讲解for循环。<br>下载数据，解压到GSE48213_RAW，list.files用于列出文件夹下所包含的文件名<br>inner_join和merge函数一样<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">library(dplyr)</div><div class="line">nameList &lt;- list.files(&quot;GSE48213_RAW/&quot;)</div><div class="line">matrix &lt;- read.table(paste0(&quot;GSE48213_RAW/&quot;,nameList[1]),header = T)</div><div class="line">for (i in 2:length(nameList))&#123;</div><div class="line">  matrix &lt;- inner_join(matrix,</div><div class="line">                      read.table(paste0(&quot;GSE48213_RAW/&quot;,nameList[i]),header = T),</div><div class="line">                      by=&quot;EnsEMBL_Gene_ID&quot;)</div><div class="line">&#125;</div><div class="line">save(matrix,file = &quot;56_cell_expression.Rda&quot;)</div></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;今天在论坛学习TCGA-RNA seq的处理，看见这样一道题，&lt;br&gt;&lt;a href=&quot;http://www.biotrainee.com:8080/thread-603-1-1.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;生信编程直播第四题：
+      
+    
+    </summary>
+    
+      <category term="生物信息" scheme="http://guoshipeng.com/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF/"/>
+    
+    
+      <category term="R" scheme="http://guoshipeng.com/tags/R/"/>
+    
+  </entry>
   
   <entry>
     <title>在Rstudio server中R的多版本切换</title>
@@ -115,9 +140,9 @@
       <category term="生物信息" scheme="http://guoshipeng.com/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF/"/>
     
     
-      <category term="字符串" scheme="http://guoshipeng.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-    
       <category term="Perl" scheme="http://guoshipeng.com/tags/Perl/"/>
+    
+      <category term="字符串" scheme="http://guoshipeng.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
   </entry>
   
@@ -346,9 +371,9 @@
       <category term="生物信息" scheme="http://guoshipeng.com/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF/"/>
     
     
-      <category term="机器学习" scheme="http://guoshipeng.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
       <category term="资源" scheme="http://guoshipeng.com/tags/%E8%B5%84%E6%BA%90/"/>
+    
+      <category term="机器学习" scheme="http://guoshipeng.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
@@ -371,9 +396,9 @@
       <category term="生物信息" scheme="http://guoshipeng.com/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF/"/>
     
     
-      <category term="资源" scheme="http://guoshipeng.com/tags/%E8%B5%84%E6%BA%90/"/>
-    
       <category term="R" scheme="http://guoshipeng.com/tags/R/"/>
+    
+      <category term="资源" scheme="http://guoshipeng.com/tags/%E8%B5%84%E6%BA%90/"/>
     
   </entry>
   
