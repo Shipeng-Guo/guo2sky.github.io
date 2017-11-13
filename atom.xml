@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://guoshipeng.com/"/>
-  <updated>2017-11-13T02:05:03.079Z</updated>
+  <updated>2017-11-13T11:15:32.497Z</updated>
   <id>http://guoshipeng.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>R语言究竟能不能优雅？</title>
+    <link href="http://guoshipeng.com/2017/11/13/16-project-eluer-01-3-and-5/"/>
+    <id>http://guoshipeng.com/2017/11/13/16-project-eluer-01-3-and-5/</id>
+    <published>2017-11-13T11:12:50.000Z</published>
+    <updated>2017-11-13T11:15:32.497Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天我无意间进入肖凯的博客，看到这样一篇文章<br><a href="http://xccds1977.blogspot.hk/2012/02/r_24.html" target="_blank" rel="external">R语言编程入门之二：对象和类</a><br>讲得挺好，但是我还是不能理解面向编程这一套逻辑，最近会解决这个问题</p><p>然后在逛博客的时候发现他写的<a href="http://xccds1977.blogspot.hk/2012/08/r1.html" target="_blank" rel="external">笨办法学R编程</a><br>里面举的例子就是<a href="https://projecteuler.net/" target="_blank" rel="external">Project Euler</a> 上的第一题,Project Euler是一系列由易到难的计算机编程挑战，<br>它提供了一个平台来激发我们解决问题的灵感和思路。</p><blockquote><p>找到1000以下，所有能被3或5整除的数，将它们相加</p></blockquote><p>原文如下：</p><blockquote><p>If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.<br>Find the sum of all the multiples of 3 or 5 below 1000.</p></blockquote><p>我一看挺简单，就尝试做了一下，中途好几次想看答案，忍住没看<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">n =0</div><div class="line">a =c()</div><div class="line">for (x in 1:999) &#123;</div><div class="line">  if (x %% 3==0 | x %% 5 == 0)&#123;</div><div class="line">  n = n +1</div><div class="line">  a[n] = x</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">sum(a)</div></pre></td></tr></table></figure></p><p>最终结果是<br>233168<br>然后我看了一下肖凯的解决方案：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">x &lt;- 1:999</div><div class="line">sum(x[x %% 3 == 0 | x %% 5 == 0 ])</div></pre></td></tr></table></figure></p><p>大惊失色，我的思维还停留在刚学Python那会的水平，差距不是点吧点<br>我在留言下面看到了ygc，应该是Y叔的留言，那是在2013年10月26日的下午<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">x &lt;- 1:999</div><div class="line">sum(ifelse(x%%3 &amp; x%%5, 0,x))</div></pre></td></tr></table></figure></p><p>随即他又给出了一行代码版本，完全的函数式编程范！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sum(sapply(1:999, function(x) ifelse(x%%3 &amp; x%%5, 0, x)))</div></pre></td></tr></table></figure></p><p>前方的路真长<br>接着我又看到了一个奇特版本,思路也很简单，但是在R语言里面我想不到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sum(seq(3, 999, 3)) + sum(seq(5, 999, 5)) - sum(seq(15, 999, 15))</div></pre></td></tr></table></figure></p><p>我看了一下<a href="https://projecteuler.net/" target="_blank" rel="external">Project Euler</a> 上面现在有600多题，而且还在不断增长<br>是个学习的好机会，但是没有评判结果不行，我又在R-blogger上面发现很多答案<br><a href="https://www.r-bloggers.com/tag/project-euler/" target="_blank" rel="external">https://www.r-bloggers.com/tag/project-euler/</a><br>实在太开心了。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;今天我无意间进入肖凯的博客，看到这样一篇文章&lt;br&gt;&lt;a href=&quot;http://xccds1977.blogspot.hk/2012/02/r_24.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;R语言编程入门之二：对象和类&lt;/a&gt;&lt;br&gt;讲
+      
+    
+    </summary>
+    
+      <category term="Project Euler" scheme="http://guoshipeng.com/categories/Project-Euler/"/>
+    
+    
+      <category term="R" scheme="http://guoshipeng.com/tags/R/"/>
+    
+      <category term="编程" scheme="http://guoshipeng.com/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>R语言中选取多个文件夹中的文件合并到新的文件夹</title>
@@ -167,9 +194,9 @@
       <category term="生物信息" scheme="http://guoshipeng.com/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF/"/>
     
     
-      <category term="字符串" scheme="http://guoshipeng.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-    
       <category term="Perl" scheme="http://guoshipeng.com/tags/Perl/"/>
+    
+      <category term="字符串" scheme="http://guoshipeng.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
   </entry>
   
@@ -398,9 +425,9 @@
       <category term="生物信息" scheme="http://guoshipeng.com/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF/"/>
     
     
-      <category term="资源" scheme="http://guoshipeng.com/tags/%E8%B5%84%E6%BA%90/"/>
-    
       <category term="机器学习" scheme="http://guoshipeng.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="资源" scheme="http://guoshipeng.com/tags/%E8%B5%84%E6%BA%90/"/>
     
   </entry>
   
@@ -423,9 +450,9 @@
       <category term="生物信息" scheme="http://guoshipeng.com/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF/"/>
     
     
-      <category term="R" scheme="http://guoshipeng.com/tags/R/"/>
-    
       <category term="资源" scheme="http://guoshipeng.com/tags/%E8%B5%84%E6%BA%90/"/>
+    
+      <category term="R" scheme="http://guoshipeng.com/tags/R/"/>
     
   </entry>
   

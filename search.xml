@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[R语言究竟能不能优雅？]]></title>
+    <url>%2F2017%2F11%2F13%2F16-project-eluer-01-3-and-5%2F</url>
+    <content type="text"><![CDATA[今天我无意间进入肖凯的博客，看到这样一篇文章R语言编程入门之二：对象和类讲得挺好，但是我还是不能理解面向编程这一套逻辑，最近会解决这个问题 然后在逛博客的时候发现他写的笨办法学R编程里面举的例子就是Project Euler 上的第一题,Project Euler是一系列由易到难的计算机编程挑战，它提供了一个平台来激发我们解决问题的灵感和思路。 找到1000以下，所有能被3或5整除的数，将它们相加 原文如下： If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.Find the sum of all the multiples of 3 or 5 below 1000. 我一看挺简单，就尝试做了一下，中途好几次想看答案，忍住没看123456789n =0a =c()for (x in 1:999) &#123; if (x %% 3==0 | x %% 5 == 0)&#123; n = n +1 a[n] = x &#125;&#125;sum(a) 最终结果是233168然后我看了一下肖凯的解决方案：12x &lt;- 1:999sum(x[x %% 3 == 0 | x %% 5 == 0 ]) 大惊失色，我的思维还停留在刚学Python那会的水平，差距不是点吧点我在留言下面看到了ygc，应该是Y叔的留言，那是在2013年10月26日的下午12x &lt;- 1:999sum(ifelse(x%%3 &amp; x%%5, 0,x)) 随即他又给出了一行代码版本，完全的函数式编程范！1sum(sapply(1:999, function(x) ifelse(x%%3 &amp; x%%5, 0, x))) 前方的路真长接着我又看到了一个奇特版本,思路也很简单，但是在R语言里面我想不到1sum(seq(3, 999, 3)) + sum(seq(5, 999, 5)) - sum(seq(15, 999, 15)) 我看了一下Project Euler 上面现在有600多题，而且还在不断增长是个学习的好机会，但是没有评判结果不行，我又在R-blogger上面发现很多答案https://www.r-bloggers.com/tag/project-euler/实在太开心了。]]></content>
+      <categories>
+        <category>Project Euler</category>
+      </categories>
+      <tags>
+        <tag>R</tag>
+        <tag>编程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[R语言中选取多个文件夹中的文件合并到新的文件夹]]></title>
     <url>%2F2017%2F11%2F13%2F15-multiple-files-into-one-by-R%2F</url>
     <content type="text"><![CDATA[之前的帖子解决了在R语言中将多个同样的行列式文件合并起来的问题今天在处理TCGA数据时发现，数据下载后是放在单独的文件夹中的，几百个文件夹里面都有一个我们需要的文件，需要把他们转移到新的文件中去，我看到perl语言的处理方式，应该R语言也可以完成我这么做的原因就是，在使用R语言处理数据时有个观点，我从两个人那边听到的，但是我现在还不能凝练： jimmy说，不要把数据导出为excel，然后下次又呆呆地导入，直接储存为”*.Rda”,要用的时候load即可，不需要来回读写 Y叔说，只要你还没有把图导出来打印，数据就是图，图就是数据，一切转换都有可能 对我而言，最直接的原因就是，在R语言中处理数据，突然间中断使用其他语言的脚本来处理某个过程，这个状态很诡异，再怎么说R语言也是语言，和其他语言比对perl比，处理数据顶多只是复杂和简单的关系，不应该是不能完成才对！ ##建立测试数据，创建10个文件夹，同时在每个文件夹中创立10个新的文件 ##经过试验我发现，dir不能批量生成，需要使用for循环，但是file可以批量1234for (i in 1:10) &#123; dir.create(paste0(&quot;tmp_&quot;,i)) #创建10个文件夹 file.create(paste0(&quot;tmp_&quot;,i,&quot;/counts&quot;,i,&quot;.htq&quot;,seq(1:10))) #同时在每个文件夹中创立10个新的文件&#125; 查看数据,忽略TCGAbiolinks dir()[1] “111.R” “112.R” “TCGAbiolinks.Rproj”[4] “TCGAbiolinks_2.5.7.zip” “tmp_1” “tmp_10”[7] “tmp_2” “tmp_3” “tmp_4”[10] “tmp_5” “tmp_6” “tmp_7”[13] “tmp_8” 查看tmp_1文件夹中的内容 dir(“tmp_1”)[1] “counts1.htq1” “counts1.htq10” “counts1.htq2” “counts1.htq3”[5] “counts1.htq4” “counts1.htq5” “counts1.htq6” “counts1.htq7”[9] “counts1.htq8” “counts1.htq9” ##任务：取每个文件夹中的第二个文件，就是名称以htq2结尾的文件 ##并且把他们放到一个新的文件夹中去12345dir.create(&quot;tmp_all&quot;) #创建新的文件夹for (dirname in dir()[5:14])&#123; file &lt;- list.files(dirname,pattern = &quot;*.htq2&quot;) #找到对应文件夹中的内容，pattern可以是正则表达式 file.copy(paste0(dirname,&quot;/&quot;,file),&quot;tmp_all&quot;) #复制内容到新的文件夹&#125; 其中dir()[5:14] 只是因为我自己的文件夹下有很多别的东西，这里是选取我想要的文件夹 dir()[5:14][1] “tmp_1” “tmp_10” “tmp_2” “tmp_3” “tmp_4” “tmp_5” “tmp_6” “tmp_7”[9] “tmp_8” “tmp_9” 我们看一下tmp_all是否已经有了文件 dir(“tmp_all”)[1] “counts1.htq2” “counts10.htq2” “counts2.htq2” “counts3.htq2”[5] “counts4.htq2” “counts5.htq2” “counts6.htq2” “counts7.htq2”[9] “counts8.htq2” “counts9.htq2” 最终我发现，R语言处理起来也很简单！有了一个隐蔽的博客真是好，随心所欲地记录。]]></content>
@@ -66,8 +78,8 @@
         <category>生物信息</category>
       </categories>
       <tags>
-        <tag>字符串</tag>
         <tag>Perl</tag>
+        <tag>字符串</tag>
       </tags>
   </entry>
   <entry>
@@ -153,8 +165,8 @@
         <category>生物信息</category>
       </categories>
       <tags>
-        <tag>资源</tag>
         <tag>机器学习</tag>
+        <tag>资源</tag>
       </tags>
   </entry>
   <entry>
@@ -165,8 +177,8 @@
         <category>生物信息</category>
       </categories>
       <tags>
-        <tag>R</tag>
         <tag>资源</tag>
+        <tag>R</tag>
       </tags>
   </entry>
 </search>
