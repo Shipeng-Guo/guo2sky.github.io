@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[17.loops_in_r]]></title>
+    <url>%2F2017%2F11%2F14%2F17-loops-in-r%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[R语言究竟能不能优雅？]]></title>
     <url>%2F2017%2F11%2F13%2F16-project-eluer-01-3-and-5%2F</url>
     <content type="text"><![CDATA[今天我无意间进入肖凯的博客，看到这样一篇文章R语言编程入门之二：对象和类讲得挺好，但是我还是不能理解面向编程这一套逻辑，最近会解决这个问题 然后在逛博客的时候发现他写的笨办法学R编程里面举的例子就是Project Euler 上的第一题,Project Euler是一系列由易到难的计算机编程挑战，它提供了一个平台来激发我们解决问题的灵感和思路。 找到1000以下，所有能被3或5整除的数，将它们相加 原文如下： If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.Find the sum of all the multiples of 3 or 5 below 1000. 我一看挺简单，就尝试做了一下，中途好几次想看答案，忍住没看123456789n =0a =c()for (x in 1:999) &#123; if (x %% 3==0 | x %% 5 == 0)&#123; n = n +1 a[n] = x &#125;&#125;sum(a) 最终结果是233168然后我看了一下肖凯的解决方案：12x &lt;- 1:999sum(x[x %% 3 == 0 | x %% 5 == 0 ]) 大惊失色，我的思维还停留在刚学Python那会的水平，差距不是点吧点我在留言下面看到了ygc，应该是Y叔的留言，那是在2013年10月26日的下午12x &lt;- 1:999sum(ifelse(x%%3 &amp; x%%5, 0,x)) 随即他又给出了一行代码版本，完全的函数式编程范！1sum(sapply(1:999, function(x) ifelse(x%%3 &amp; x%%5, 0, x))) 前方的路真长接着我又看到了一个奇特版本,思路也很简单，但是在R语言里面我想不到1sum(seq(3, 999, 3)) + sum(seq(5, 999, 5)) - sum(seq(15, 999, 15)) 我看了一下Project Euler 上面现在有600多题，而且还在不断增长是个学习的好机会，但是没有评判结果不行，我又在R-blogger上面发现很多答案https://www.r-bloggers.com/tag/project-euler/实在太开心了。]]></content>
@@ -78,8 +83,8 @@
         <category>生物信息</category>
       </categories>
       <tags>
-        <tag>Perl</tag>
         <tag>字符串</tag>
+        <tag>Perl</tag>
       </tags>
   </entry>
   <entry>
@@ -165,8 +170,8 @@
         <category>生物信息</category>
       </categories>
       <tags>
-        <tag>机器学习</tag>
         <tag>资源</tag>
+        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -177,8 +182,8 @@
         <category>生物信息</category>
       </categories>
       <tags>
-        <tag>资源</tag>
         <tag>R</tag>
+        <tag>资源</tag>
       </tags>
   </entry>
 </search>
