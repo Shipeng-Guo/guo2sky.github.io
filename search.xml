@@ -90,8 +90,8 @@
         <category>生物信息</category>
       </categories>
       <tags>
-        <tag>Perl</tag>
         <tag>字符串</tag>
+        <tag>Perl</tag>
       </tags>
   </entry>
   <entry>
@@ -102,8 +102,8 @@
         <category>生物信息</category>
       </categories>
       <tags>
-        <tag>TCGA</tag>
         <tag>数据库</tag>
+        <tag>TCGA</tag>
         <tag>GEPIA</tag>
       </tags>
   </entry>
@@ -154,8 +154,8 @@
         <category>生物信息</category>
       </categories>
       <tags>
-        <tag>TCGA</tag>
         <tag>数据库</tag>
+        <tag>TCGA</tag>
       </tags>
   </entry>
   <entry>
