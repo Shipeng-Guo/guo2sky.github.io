@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://guoshipeng.com/"/>
-  <updated>2017-11-15T02:35:18.660Z</updated>
+  <updated>2017-11-15T10:33:14.147Z</updated>
   <id>http://guoshipeng.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>用R语言来找回文数</title>
+    <link href="http://guoshipeng.com/2017/11/15/19-find-palin/"/>
+    <id>http://guoshipeng.com/2017/11/15/19-find-palin/</id>
+    <published>2017-11-15T10:31:38.000Z</published>
+    <updated>2017-11-15T10:33:14.147Z</updated>
+    
+    <content type="html"><![CDATA[<p>第4题</p><blockquote><p>A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.<br>Find the largest palindrome made from the product of two 3-digit numbers.</p></blockquote><p>意思是找出两个三位数乘积的最大回文数。<br>最朴素的思路：写一个能判断回文数的函数，把三位数的乘积全部求出，一个个判断是否是回文数，再求最大数。<br>1.首先我们创建一个函数来判断回文数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">if.palin &lt;- function(x)&#123;</div><div class="line">  a &lt;- as.character(x)</div><div class="line">  b &lt;- unlist(strsplit(a,&quot;&quot;))</div><div class="line">  if (all(b==b[length(b):1])) return (TRUE)</div><div class="line">  else return(FALSE)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p><p>2.穷尽所有的三位数乘三位数的乘积<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">g &lt;- 0</div><div class="line">palin &lt;- c()</div><div class="line">for (i in 100:999)&#123;</div><div class="line">  for (j in 100:999)&#123;</div><div class="line">    if (if.palin(i*j)==TRUE)&#123;</div><div class="line">      g &lt;- g +1</div><div class="line">      palin[g] &lt;- i*j</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p><p>3.找出最大的回文数<br>max(palin)</p><blockquote><p>906609</p></blockquote><p>4.如果想知道每个回文数是由哪两个数组成的怎么办？<br>改写一下代码，每次把结果存入列表中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">g &lt;- 0</div><div class="line">palin &lt;- list()</div><div class="line">for (i in 100:999)&#123;</div><div class="line">  for (j in 100:999)&#123;</div><div class="line">    if (if.palin(i*j)==TRUE)&#123;</div><div class="line">      g &lt;- g +1</div><div class="line">      palin[g] &lt;- list(c(i*j,i,j))</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p><p>获取列表中每个列表的第一个数，注意”[[“在这个时候代表的是函数，表示获取<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">all &lt;- sapply(palin,&quot;[[&quot;,1)</div><div class="line">max(all)</div></pre></td></tr></table></figure></p><p>得到906609，根据这个数值获取位置</p><blockquote><p>which(all ==906609)<br>[1] 2367 2468</p></blockquote><p>有两个位置，这个情况是由之前的循环导致的，应该是一样的结果，只是顺序对调。</p><blockquote><p>palin[2367]<br>[[1]]<br>[1] 906609    913    993</p></blockquote><p>最终最大的回文数是906609，由913乘以993得到<br>note：<br>1.本次练习开始写函数，参考资料为Advanced R 第二版，但是这函数只能起到判断的作用。<br>2.rev()函数可以实现向量倒序，代替b[length(b):1])) = rev(b)<br>3.切开字符串使用strsplit,如果在拼回去需要用paste</p><blockquote><p>paste(c(“B”,”S”),collapse = “”)<br>[1] “BS”</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;第4题&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit number
+      
+    
+    </summary>
+    
+      <category term="Project Euler" scheme="http://guoshipeng.com/categories/Project-Euler/"/>
+    
+    
+      <category term="R" scheme="http://guoshipeng.com/tags/R/"/>
+    
+      <category term="编程" scheme="http://guoshipeng.com/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>万万使不得！-R语言中的循环套循环</title>
@@ -252,9 +281,9 @@
       <category term="生物信息" scheme="http://guoshipeng.com/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF/"/>
     
     
-      <category term="字符串" scheme="http://guoshipeng.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-    
       <category term="Perl" scheme="http://guoshipeng.com/tags/Perl/"/>
+    
+      <category term="字符串" scheme="http://guoshipeng.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
   </entry>
   
@@ -284,9 +313,9 @@
       <category term="生物信息" scheme="http://guoshipeng.com/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF/"/>
     
     
-      <category term="数据库" scheme="http://guoshipeng.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
       <category term="TCGA" scheme="http://guoshipeng.com/tags/TCGA/"/>
+    
+      <category term="数据库" scheme="http://guoshipeng.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
       <category term="GEPIA" scheme="http://guoshipeng.com/tags/GEPIA/"/>
     
@@ -432,9 +461,9 @@
       <category term="生物信息" scheme="http://guoshipeng.com/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF/"/>
     
     
-      <category term="数据库" scheme="http://guoshipeng.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
       <category term="TCGA" scheme="http://guoshipeng.com/tags/TCGA/"/>
+    
+      <category term="数据库" scheme="http://guoshipeng.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
