@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://guoshipeng.com/"/>
-  <updated>2017-11-16T10:07:08.833Z</updated>
+  <updated>2017-11-16T10:16:02.589Z</updated>
   <id>http://guoshipeng.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://guoshipeng.com/2017/11/16/22-GTF-RefG/"/>
     <id>http://guoshipeng.com/2017/11/16/22-GTF-RefG/</id>
     <published>2017-11-16T10:06:11.000Z</published>
-    <updated>2017-11-16T10:07:08.833Z</updated>
+    <updated>2017-11-16T10:16:02.589Z</updated>
     
-    <content type="html"><![CDATA[<p>虽然我们已经找到<a href="http://guoshipeng.com/2017/11/16/20-GTF-in-R/">在R语言中读取GTF文件的最好方法</a><br>但是不妨碍我们学习新的方法<br>实际上rtracklayer::import就是个另类，一般而言大家读入GTF文件后只有9行<br><img src="http://oy0a9ohwa.bkt.clouddn.com/blog/171116/6hKfCc6Hbd.png" alt="mark"><br>refGenome也是，但是他可以把第九行轻松地取出来<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">install.packages(&quot;refGenome&quot;)</div><div class="line">library(refGenome)</div></pre></td></tr></table></figure></p><p>create ensemblGenome object for storing Ensembl genomic annotation data<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ens &lt;- ensemblGenome()</div></pre></td></tr></table></figure></p><p>read GTF file into ensemblGenome object<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">read.gtf(ens, &quot;Homo_sapiens.GRCh38.90.chr.gtf&quot;)</div></pre></td></tr></table></figure></p><blockquote><p>read.gtf(ens, “Homo_sapiens.GRCh38.90.chr.gtf”)<br>[read.gtf.refGenome] Reading file ‘Homo_sapiens.GRCh38.90.chr.gtf’.<br>[GTF]  2612134 lines processed.<br>[read.gtf.refGenome] Extracting genes table.<br>[read.gtf.refGenome] Found 58,243 gene records.<br>[read.gtf.refGenome] Finished.</p></blockquote><p>看一下他属性</p><blockquote><p>class(ens)<br>[1] “ensemblGenome”<br>attr(,”package”)<br>[1] “refGenome”</p></blockquote><p>本次的重点来了create table of genes<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">my_gene &lt;- getGenePositions(ens)</div></pre></td></tr></table></figure></p><blockquote><p>class(my_gene)<br>[1] “data.frame”<br>dim(my_gene)<br>[1] 58243    26</p></blockquote><p>这26个是变量分别是：</p><blockquote><p>testmygene &lt;- my_gene[1:5,]<br>View(testmygene)<br>names(testmygene)<br>[1] “id”                      “seqid”<br>[3] “source”                  “start”<br>[5] “end”                      “score”<br>[7] “strand”                  “frame”<br>[9] “ccds_id”                  “protein_version”<br>[11] “protein_id”              “exon_version”<br>[13] “transcript_support_level” “tag”<br>[15] “exon_number”              “gene_id”<br>[17] “transcript_name”          “gene_version”<br>[19] “gene_name”                “gene_source”<br>[21] “gene_biotype”            “transcript_id”<br>[23] “transcript_source”        “exon_id”<br>[25] “transcript_version”      “transcript_biotype”</p></blockquote><p>获取也是非常容易。<br>其实这个功能完全是可以自己写个函数来搞定的，之前已经写过了。<br>根据这个帖子结合dplyr，他还可以做很多事情<br><a href="https://davetang.org/muse/2017/08/04/read-gtf-file-r/" target="_blank" rel="external">Read GTF file into R</a><br>比如可以每个染色体上有哪些gene类型<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">my_gene %&gt;% group_by(seqid, gene_biotype) %&gt;% summarise(count = n()) -&gt; my_tally</div><div class="line">ggplot(my_tally, aes(x =seqid, y = log2(count))) +</div><div class="line">  geom_bar(aes(fill = gene_biotype), stat = &apos;identity&apos;, position = &apos;dodge&apos;)</div></pre></td></tr></table></figure></p><p><img src="http://oy0a9ohwa.bkt.clouddn.com/blog/171116/9jdmiI5dLf.png" alt="mark"></p>]]></content>
+    <content type="html"><![CDATA[<p>虽然我们已经找到<a href="http://guoshipeng.com/2017/11/16/20-GTF-in-R/">在R语言中读取GTF文件的最好方法</a><br>但是不妨碍我们学习新的方法<br>实际上rtracklayer::import就是个另类，一般而言大家读入GTF文件后只有9行<br><img src="http://oy0a9ohwa.bkt.clouddn.com/blog/171116/6hKfCc6Hbd.png" alt="mark"><br>refGenome也是，但是他可以把第九行轻松地取出来<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">install.packages(&quot;refGenome&quot;)</div><div class="line">library(refGenome)</div></pre></td></tr></table></figure></p><p>create ensemblGenome object for storing Ensembl genomic annotation data<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ens &lt;- ensemblGenome()</div></pre></td></tr></table></figure></p><p>read GTF file into ensemblGenome object<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">read.gtf(ens, &quot;Homo_sapiens.GRCh38.90.chr.gtf&quot;)</div></pre></td></tr></table></figure></p><blockquote><p>read.gtf(ens, “Homo_sapiens.GRCh38.90.chr.gtf”)<br>[read.gtf.refGenome] Reading file ‘Homo_sapiens.GRCh38.90.chr.gtf’.<br>[GTF]  2612134 lines processed.<br>[read.gtf.refGenome] Extracting genes table.<br>[read.gtf.refGenome] Found 58,243 gene records.<br>[read.gtf.refGenome] Finished.</p></blockquote><p>看一下他属性</p><blockquote><p>class(ens)<br>[1] “ensemblGenome”<br>attr(,”package”)<br>[1] “refGenome”</p></blockquote><p>本次的重点来了create table of genes<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">my_gene &lt;- getGenePositions(ens)</div></pre></td></tr></table></figure></p><blockquote><p>class(my_gene)<br>[1] “data.frame”<br>dim(my_gene)<br>[1] 58243    26</p></blockquote><p>这26个是变量分别是：</p><blockquote><p>testmygene &lt;- my_gene[1:5,]<br>View(testmygene)<br>names(testmygene)<br>[1] “id”                      “seqid”<br>[3] “source”                  “start”<br>[5] “end”                      “score”<br>[7] “strand”                  “frame”<br>[9] “ccds_id”                  “protein_version”<br>[11] “protein_id”              “exon_version”<br>[13] “transcript_support_level” “tag”<br>[15] “exon_number”              “gene_id”<br>[17] “transcript_name”          “gene_version”<br>[19] “gene_name”                “gene_source”<br>[21] “gene_biotype”            “transcript_id”<br>[23] “transcript_source”        “exon_id”<br>[25] “transcript_version”      “transcript_biotype”</p></blockquote><p>获取也是非常容易。<br>其实这个功能完全是可以自己写个函数来搞定的，之前已经写过了。<br>根据这个帖子结合dplyr，他还可以做很多事情<br><a href="https://davetang.org/muse/2017/08/04/read-gtf-file-r/" target="_blank" rel="external">Read GTF file into R</a><br>同时这个文章的作者已经坚持写作7年，是个生物信息学的大神，收入书签！<br>比如可以每个染色体上有哪些gene类型<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">my_gene %&gt;% group_by(seqid, gene_biotype) %&gt;% summarise(count = n()) -&gt; my_tally</div><div class="line">ggplot(my_tally, aes(x =seqid, y = log2(count))) +</div><div class="line">  geom_bar(aes(fill = gene_biotype), stat = &apos;identity&apos;, position = &apos;dodge&apos;)</div></pre></td></tr></table></figure></p><p><img src="http://oy0a9ohwa.bkt.clouddn.com/blog/171116/9jdmiI5dLf.png" alt="mark"></p>]]></content>
     
     <summary type="html">
     
@@ -399,9 +399,9 @@
       <category term="生物信息" scheme="http://guoshipeng.com/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF/"/>
     
     
-      <category term="数据库" scheme="http://guoshipeng.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
       <category term="TCGA" scheme="http://guoshipeng.com/tags/TCGA/"/>
+    
+      <category term="数据库" scheme="http://guoshipeng.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
       <category term="GEPIA" scheme="http://guoshipeng.com/tags/GEPIA/"/>
     
@@ -547,9 +547,9 @@
       <category term="生物信息" scheme="http://guoshipeng.com/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF/"/>
     
     
-      <category term="数据库" scheme="http://guoshipeng.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
       <category term="TCGA" scheme="http://guoshipeng.com/tags/TCGA/"/>
+    
+      <category term="数据库" scheme="http://guoshipeng.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
