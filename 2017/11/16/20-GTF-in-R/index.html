@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="R,TCGA,编程," />
 
 
 
@@ -88,16 +88,18 @@
 
 
 
-<meta name="description" content="从临床中发现现象，用生物信息去筛选方向，用科学实验去证明，最终希望能够回到临床，这就是我创立这个博客的原因。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="果子学生信">
-<meta property="og:url" content="http://guoshipeng.com/tags/服务器/index.html">
+<meta name="description" content="下载的TCGA数据是没有注释的，需要从ensemble上面下载GTF文件，现在需要把GTF文件读入R 第一种方法rtracklayer::import12345source(&amp;quot;https://bioconductor.org/biocLite.R&amp;quot;)biocLite(&amp;quot;rtracklayer&amp;quot;)biocLite(&amp;quot;SummarizedExperim">
+<meta name="keywords" content="R,TCGA,编程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在R语言中读取GTF文件的最好方法">
+<meta property="og:url" content="http://guoshipeng.com/2017/11/16/20-GTF-in-R/index.html">
 <meta property="og:site_name" content="果子学生信">
-<meta property="og:description" content="从临床中发现现象，用生物信息去筛选方向，用科学实验去证明，最终希望能够回到临床，这就是我创立这个博客的原因。">
+<meta property="og:description" content="下载的TCGA数据是没有注释的，需要从ensemble上面下载GTF文件，现在需要把GTF文件读入R 第一种方法rtracklayer::import12345source(&amp;quot;https://bioconductor.org/biocLite.R&amp;quot;)biocLite(&amp;quot;rtracklayer&amp;quot;)biocLite(&amp;quot;SummarizedExperim">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-11-16T07:48:40.280Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="果子学生信">
-<meta name="twitter:description" content="从临床中发现现象，用生物信息去筛选方向，用科学实验去证明，最终希望能够回到临床，这就是我创立这个博客的原因。">
+<meta name="twitter:title" content="在R语言中读取GTF文件的最好方法">
+<meta name="twitter:description" content="下载的TCGA数据是没有注释的，需要从ensemble上面下载GTF文件，现在需要把GTF文件读入R 第一种方法rtracklayer::import12345source(&amp;quot;https://bioconductor.org/biocLite.R&amp;quot;)biocLite(&amp;quot;rtracklayer&amp;quot;)biocLite(&amp;quot;SummarizedExperim">
 
 
 
@@ -127,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://guoshipeng.com/tags/服务器/"/>
+  <link rel="canonical" href="http://guoshipeng.com/2017/11/16/20-GTF-in-R/"/>
 
 
 
 
 
-  <title>标签: 服务器 | 果子学生信</title>
+  <title>在R语言中读取GTF文件的最好方法 | 果子学生信</title>
   
 
 
@@ -161,7 +163,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -319,54 +321,278 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>服务器<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://guoshipeng.com/2017/11/16/20-GTF-in-R/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shipeng Guo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/EDia529KCk.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="果子学生信">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2017/10/17/05-server-self-made/" itemprop="url">
-              
-                <span itemprop="name">临床医生的服务器组装记录</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">在R语言中读取GTF文件的最好方法</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-10-17T20:54:34+08:00"
-              content="2017-10-17" >
-          10-17
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-16T15:46:56+08:00">
+                2017-11-16
+              </time>
+            
 
-    </header>
-  </article>
+            
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-11-16T15:48:40+08:00">
+                2017-11-16
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/生物信息/" itemprop="url" rel="index">
+                    <span itemprop="name">生物信息</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/11/16/20-GTF-in-R/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/11/16/20-GTF-in-R/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-eye"></i> 阅读次数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  616
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>下载的TCGA数据是没有注释的，需要从ensemble上面下载GTF文件，现在需要把GTF文件读入R</p>
+<h2 id="第一种方法rtracklayer-import"><a href="#第一种方法rtracklayer-import" class="headerlink" title="第一种方法rtracklayer::import"></a>第一种方法rtracklayer::import</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">source(&quot;https://bioconductor.org/biocLite.R&quot;)</div><div class="line">biocLite(&quot;rtracklayer&quot;)</div><div class="line">biocLite(&quot;SummarizedExperiment&quot;)</div><div class="line">gtf1 &lt;- rtracklayer::import(&apos;Homo_sapiens.GRCh38.90.chr.gtf&apos;)</div><div class="line">gtf_df &lt;- as.data.frame(gtf1)</div></pre></td></tr></table></figure>
+<p>最终读入27个变量，2612129个观测，测试一下显示的不错<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">test &lt;- gtf_df[1:5,]</div><div class="line">View(test)</div></pre></td></tr></table></figure></p>
+<p>取出我需要的gene_id,gene_biotype,gene_name，成为新的数据框<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">geneid_df &lt;- dplyr::select(gtf_df,c(gene_name,gene_id,gene_biotype))</div></pre></td></tr></table></figure></p>
+<h2 id="第二种方法ead-table"><a href="#第二种方法ead-table" class="headerlink" title="第二种方法ead.table"></a>第二种方法ead.table</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gtf2 &lt;- read.table(&apos;Homo_sapiens.GRCh38.90.chr.gtf&apos;, header = FALSE, sep = &apos;\t&apos;)</div></pre></td></tr></table></figure>
+<p>最后发现，速度奇慢无比,取消参考了Y叔的帖子增加参数，读入成功，需要1分钟,读入9个变量<br><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247483986&amp;idx=1&amp;sn=43214f77337bc660a733bbc80ab1124b&amp;chksm=ec43b315db343a03cd51ee6cb96e1646975d08e9ea7a980bed236472b77bc6166e601a977dab&amp;mpshare=1&amp;scene=1&amp;srcid=1116dPlFaunZobi46nhFTAM5#rd" target="_blank" rel="external">根据GTF画基因的多个转录本结构</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">gtf2 &lt;- read.table(&apos;Homo_sapiens.GRCh38.90.chr.gtf&apos;, stringsAsFactors = F, header = FALSE, sep = &apos;\t&apos;,comment = &quot;#&quot;)</div><div class="line">test2  &lt;- gtf2[1:5,]</div></pre></td></tr></table></figure></p>
+<p>##第三种方法readr包里面的read_table2<br>速度很快，有进度条，读入了18个变量，但是最gene_biotype显示不对<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">gtf3 &lt;- readr::read_table2(&quot;Homo_sapiens.GRCh38.90.chr.gtf&quot;,comment = &quot;#&quot;)</div><div class="line">gtf_df3 &lt;- as.data.frame(gtf3) #转成data.frame</div><div class="line">test3 &lt;- gtf_df3[1:5,]</div><div class="line">View(test3)</div></pre></td></tr></table></figure></p>
+<p>##第四种方法read.table，fread<br>读入数据跟read.table一样，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">library(data.table)</div><div class="line">genes &lt;- fread(&quot;Homo_sapiens.GRCh38.90.chr.gtf&quot;)</div><div class="line">test4&lt;- genes[1:5,]</div><div class="line">View(test4)</div></pre></td></tr></table></figure></p>
+<p><strong>上一步用时12秒，速度极快,只是读入后没有名字，需要自己添加</strong><br>读入9个变量,跟read.table一样<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">setnames(genes, names(genes), c(&quot;chr&quot;,&quot;source&quot;,&quot;type&quot;,&quot;start&quot;,&quot;end&quot;,&quot;score&quot;,&quot;strand&quot;,&quot;phase&quot;,&quot;attributes&quot;) )</div></pre></td></tr></table></figure></p>
+<p>可选步骤，type那一项有转录本和gene，选取gene，其他有很多转录本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">genes &lt;- genes[type == &quot;gene&quot;]</div></pre></td></tr></table></figure></p>
+<p>我要的信息粗存在attributes中，构建函数提取<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">extract_attributes &lt;- function(gtf_attributes, att_of_interest)&#123;</div><div class="line">  att &lt;- strsplit(gtf_attributes,&quot;; &quot;)</div><div class="line">  att &lt;- gsub(&quot;\&quot;&quot;,&quot;&quot;,unlist(att))</div><div class="line">  if(!is.null(unlist(strsplit(att[grep(att_of_interest, att)], &quot; &quot;))))&#123;</div><div class="line">    return( unlist(strsplit(att[grep(att_of_interest, att)], &quot; &quot;))[2])</div><div class="line">  &#125;else&#123;</div><div class="line">    return(NA)&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>举例子解释,加入我们需要gene_id<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">gtf_attributes &lt;- genes[1,9]</div><div class="line">att &lt;- strsplit(gtf_attributes,&quot;; &quot;)</div></pre></td></tr></table></figure></p>
+<p>这一步提示non-character argument，后面我查询才知道, 对于第九列的第一行的的获取两种方式返回的格式不一样<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">genes[1,9] #data.frame</div><div class="line">genes$attributes[1] #character</div></pre></td></tr></table></figure></p>
+<p>而strsplit的对象是character,重来<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">gtf_attributes &lt;- genes$attributes[1]</div><div class="line">att &lt;- strsplit(gtf_attributes,&quot;; &quot;)</div><div class="line">att &lt;- gsub(&quot;\&quot;&quot;,&quot;&quot;,unlist(att))</div></pre></td></tr></table></figure></p>
+<p>grep获取位置，获取到内容后分隔,得到的第二个元素是我们需要的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">unlist(strsplit(att[grep(&quot;gene_id&quot;, att)], &quot; &quot;))[2]</div></pre></td></tr></table></figure></p>
+<p>利用函数获得基因列表<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">genes$gene_id &lt;- unlist(lapply(genes$attributes, extract_attributes, &quot;gene_id&quot;))</div></pre></td></tr></table></figure></p>
+<p>如果我们选择使用第一种方法rtracklayer::import，这些事情都是不需要做的！！！</p>
+<p>#总结：rtracklayer::import最简单，fread最快，read.table可选，read_table没戏！</p>
 
       
     </div>
 
+    
+    
+    
+    <div>
+        
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">------ 本文结束------</div>
+    
+</div>
+
+        
+     </div>
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Shipeng Guo
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://guoshipeng.com/2017/11/16/20-GTF-in-R/" title="在R语言中读取GTF文件的最好方法">http://guoshipeng.com/2017/11/16/20-GTF-in-R/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/R/" rel="tag"><i class="fa fa-tag"></i> R</a>
+          
+            <a href="/tags/TCGA/" rel="tag"><i class="fa fa-tag"></i> TCGA</a>
+          
+            <a href="/tags/编程/" rel="tag"><i class="fa fa-tag"></i> 编程</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/15/19-find-palin/" rel="next" title="用R语言来找回文数">
+                <i class="fa fa-chevron-left"></i> 用R语言来找回文数
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -374,6 +600,20 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -394,8 +634,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -524,6 +773,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一种方法rtracklayer-import"><span class="nav-number">1.</span> <span class="nav-text">第一种方法rtracklayer::import</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二种方法ead-table"><span class="nav-number">2.</span> <span class="nav-text">第二种方法ead.table</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -692,6 +957,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 
@@ -709,6 +978,18 @@
       <script id="dsq-count-scr" src="https://http-guoshipeng-com-1.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://guoshipeng.com/2017/11/16/20-GTF-in-R/';
+          this.page.identifier = '2017/11/16/20-GTF-in-R/';
+          this.page.title = '在R语言中读取GTF文件的最好方法';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://http-guoshipeng-com-1.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   

@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[在R语言中读取GTF文件的最好方法]]></title>
+    <url>%2F2017%2F11%2F16%2F20-GTF-in-R%2F</url>
+    <content type="text"><![CDATA[下载的TCGA数据是没有注释的，需要从ensemble上面下载GTF文件，现在需要把GTF文件读入R 第一种方法rtracklayer::import12345source(&quot;https://bioconductor.org/biocLite.R&quot;)biocLite(&quot;rtracklayer&quot;)biocLite(&quot;SummarizedExperiment&quot;)gtf1 &lt;- rtracklayer::import(&apos;Homo_sapiens.GRCh38.90.chr.gtf&apos;)gtf_df &lt;- as.data.frame(gtf1) 最终读入27个变量，2612129个观测，测试一下显示的不错12test &lt;- gtf_df[1:5,]View(test) 取出我需要的gene_id,gene_biotype,gene_name，成为新的数据框1geneid_df &lt;- dplyr::select(gtf_df,c(gene_name,gene_id,gene_biotype)) 第二种方法ead.table1gtf2 &lt;- read.table(&apos;Homo_sapiens.GRCh38.90.chr.gtf&apos;, header = FALSE, sep = &apos;\t&apos;) 最后发现，速度奇慢无比,取消参考了Y叔的帖子增加参数，读入成功，需要1分钟,读入9个变量根据GTF画基因的多个转录本结构12gtf2 &lt;- read.table(&apos;Homo_sapiens.GRCh38.90.chr.gtf&apos;, stringsAsFactors = F, header = FALSE, sep = &apos;\t&apos;,comment = &quot;#&quot;)test2 &lt;- gtf2[1:5,] ##第三种方法readr包里面的read_table2速度很快，有进度条，读入了18个变量，但是最gene_biotype显示不对1234gtf3 &lt;- readr::read_table2(&quot;Homo_sapiens.GRCh38.90.chr.gtf&quot;,comment = &quot;#&quot;)gtf_df3 &lt;- as.data.frame(gtf3) #转成data.frametest3 &lt;- gtf_df3[1:5,]View(test3) ##第四种方法read.table，fread读入数据跟read.table一样，1234library(data.table)genes &lt;- fread(&quot;Homo_sapiens.GRCh38.90.chr.gtf&quot;)test4&lt;- genes[1:5,]View(test4) 上一步用时12秒，速度极快,只是读入后没有名字，需要自己添加读入9个变量,跟read.table一样1setnames(genes, names(genes), c(&quot;chr&quot;,&quot;source&quot;,&quot;type&quot;,&quot;start&quot;,&quot;end&quot;,&quot;score&quot;,&quot;strand&quot;,&quot;phase&quot;,&quot;attributes&quot;) ) 可选步骤，type那一项有转录本和gene，选取gene，其他有很多转录本1genes &lt;- genes[type == &quot;gene&quot;] 我要的信息粗存在attributes中，构建函数提取12345678extract_attributes &lt;- function(gtf_attributes, att_of_interest)&#123; att &lt;- strsplit(gtf_attributes,&quot;; &quot;) att &lt;- gsub(&quot;\&quot;&quot;,&quot;&quot;,unlist(att)) if(!is.null(unlist(strsplit(att[grep(att_of_interest, att)], &quot; &quot;))))&#123; return( unlist(strsplit(att[grep(att_of_interest, att)], &quot; &quot;))[2]) &#125;else&#123; return(NA)&#125;&#125; 举例子解释,加入我们需要gene_id12gtf_attributes &lt;- genes[1,9]att &lt;- strsplit(gtf_attributes,&quot;; &quot;) 这一步提示non-character argument，后面我查询才知道, 对于第九列的第一行的的获取两种方式返回的格式不一样12genes[1,9] #data.framegenes$attributes[1] #character 而strsplit的对象是character,重来123gtf_attributes &lt;- genes$attributes[1]att &lt;- strsplit(gtf_attributes,&quot;; &quot;)att &lt;- gsub(&quot;\&quot;&quot;,&quot;&quot;,unlist(att)) grep获取位置，获取到内容后分隔,得到的第二个元素是我们需要的1unlist(strsplit(att[grep(&quot;gene_id&quot;, att)], &quot; &quot;))[2] 利用函数获得基因列表1genes$gene_id &lt;- unlist(lapply(genes$attributes, extract_attributes, &quot;gene_id&quot;)) 如果我们选择使用第一种方法rtracklayer::import，这些事情都是不需要做的！！！ #总结：rtracklayer::import最简单，fread最快，read.table可选，read_table没戏！]]></content>
+      <categories>
+        <category>生物信息</category>
+      </categories>
+      <tags>
+        <tag>R</tag>
+        <tag>TCGA</tag>
+        <tag>编程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[用R语言来找回文数]]></title>
     <url>%2F2017%2F11%2F15%2F19-find-palin%2F</url>
     <content type="text"><![CDATA[第4题 A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.Find the largest palindrome made from the product of two 3-digit numbers. 意思是找出两个三位数乘积的最大回文数。最朴素的思路：写一个能判断回文数的函数，把三位数的乘积全部求出，一个个判断是否是回文数，再求最大数。1.首先我们创建一个函数来判断回文数123456if.palin &lt;- function(x)&#123; a &lt;- as.character(x) b &lt;- unlist(strsplit(a,&quot;&quot;)) if (all(b==b[length(b):1])) return (TRUE) else return(FALSE)&#125; 2.穷尽所有的三位数乘三位数的乘积12345678910g &lt;- 0palin &lt;- c()for (i in 100:999)&#123; for (j in 100:999)&#123; if (if.palin(i*j)==TRUE)&#123; g &lt;- g +1 palin[g] &lt;- i*j &#125; &#125;&#125; 3.找出最大的回文数max(palin) 906609 4.如果想知道每个回文数是由哪两个数组成的怎么办？改写一下代码，每次把结果存入列表中12345678910g &lt;- 0palin &lt;- list()for (i in 100:999)&#123; for (j in 100:999)&#123; if (if.palin(i*j)==TRUE)&#123; g &lt;- g +1 palin[g] &lt;- list(c(i*j,i,j)) &#125; &#125;&#125; 获取列表中每个列表的第一个数，注意”[[“在这个时候代表的是函数，表示获取12all &lt;- sapply(palin,&quot;[[&quot;,1)max(all) 得到906609，根据这个数值获取位置 which(all ==906609)[1] 2367 2468 有两个位置，这个情况是由之前的循环导致的，应该是一样的结果，只是顺序对调。 palin[2367][[1]][1] 906609 913 993 最终最大的回文数是906609，由913乘以993得到note：1.本次练习开始写函数，参考资料为Advanced R 第二版，但是这函数只能起到判断的作用。2.rev()函数可以实现向量倒序，代替b[length(b):1])) = rev(b)3.切开字符串使用strsplit,如果在拼回去需要用paste paste(c(“B”,”S”),collapse = “”)[1] “BS”]]></content>
@@ -126,8 +139,8 @@
         <category>生物信息</category>
       </categories>
       <tags>
-        <tag>TCGA</tag>
         <tag>数据库</tag>
+        <tag>TCGA</tag>
         <tag>GEPIA</tag>
       </tags>
   </entry>
@@ -178,8 +191,8 @@
         <category>生物信息</category>
       </categories>
       <tags>
-        <tag>TCGA</tag>
         <tag>数据库</tag>
+        <tag>TCGA</tag>
       </tags>
   </entry>
   <entry>

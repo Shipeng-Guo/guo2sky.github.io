@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://guoshipeng.com/"/>
-  <updated>2017-11-15T10:33:14.147Z</updated>
+  <updated>2017-11-16T07:48:40.280Z</updated>
   <id>http://guoshipeng.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在R语言中读取GTF文件的最好方法</title>
+    <link href="http://guoshipeng.com/2017/11/16/20-GTF-in-R/"/>
+    <id>http://guoshipeng.com/2017/11/16/20-GTF-in-R/</id>
+    <published>2017-11-16T07:46:56.000Z</published>
+    <updated>2017-11-16T07:48:40.280Z</updated>
+    
+    <content type="html"><![CDATA[<p>下载的TCGA数据是没有注释的，需要从ensemble上面下载GTF文件，现在需要把GTF文件读入R</p><h2 id="第一种方法rtracklayer-import"><a href="#第一种方法rtracklayer-import" class="headerlink" title="第一种方法rtracklayer::import"></a>第一种方法rtracklayer::import</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">source(&quot;https://bioconductor.org/biocLite.R&quot;)</div><div class="line">biocLite(&quot;rtracklayer&quot;)</div><div class="line">biocLite(&quot;SummarizedExperiment&quot;)</div><div class="line">gtf1 &lt;- rtracklayer::import(&apos;Homo_sapiens.GRCh38.90.chr.gtf&apos;)</div><div class="line">gtf_df &lt;- as.data.frame(gtf1)</div></pre></td></tr></table></figure><p>最终读入27个变量，2612129个观测，测试一下显示的不错<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">test &lt;- gtf_df[1:5,]</div><div class="line">View(test)</div></pre></td></tr></table></figure></p><p>取出我需要的gene_id,gene_biotype,gene_name，成为新的数据框<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">geneid_df &lt;- dplyr::select(gtf_df,c(gene_name,gene_id,gene_biotype))</div></pre></td></tr></table></figure></p><h2 id="第二种方法ead-table"><a href="#第二种方法ead-table" class="headerlink" title="第二种方法ead.table"></a>第二种方法ead.table</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gtf2 &lt;- read.table(&apos;Homo_sapiens.GRCh38.90.chr.gtf&apos;, header = FALSE, sep = &apos;\t&apos;)</div></pre></td></tr></table></figure><p>最后发现，速度奇慢无比,取消参考了Y叔的帖子增加参数，读入成功，需要1分钟,读入9个变量<br><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247483986&amp;idx=1&amp;sn=43214f77337bc660a733bbc80ab1124b&amp;chksm=ec43b315db343a03cd51ee6cb96e1646975d08e9ea7a980bed236472b77bc6166e601a977dab&amp;mpshare=1&amp;scene=1&amp;srcid=1116dPlFaunZobi46nhFTAM5#rd" target="_blank" rel="external">根据GTF画基因的多个转录本结构</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">gtf2 &lt;- read.table(&apos;Homo_sapiens.GRCh38.90.chr.gtf&apos;, stringsAsFactors = F, header = FALSE, sep = &apos;\t&apos;,comment = &quot;#&quot;)</div><div class="line">test2  &lt;- gtf2[1:5,]</div></pre></td></tr></table></figure></p><p>##第三种方法readr包里面的read_table2<br>速度很快，有进度条，读入了18个变量，但是最gene_biotype显示不对<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">gtf3 &lt;- readr::read_table2(&quot;Homo_sapiens.GRCh38.90.chr.gtf&quot;,comment = &quot;#&quot;)</div><div class="line">gtf_df3 &lt;- as.data.frame(gtf3) #转成data.frame</div><div class="line">test3 &lt;- gtf_df3[1:5,]</div><div class="line">View(test3)</div></pre></td></tr></table></figure></p><p>##第四种方法read.table，fread<br>读入数据跟read.table一样，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">library(data.table)</div><div class="line">genes &lt;- fread(&quot;Homo_sapiens.GRCh38.90.chr.gtf&quot;)</div><div class="line">test4&lt;- genes[1:5,]</div><div class="line">View(test4)</div></pre></td></tr></table></figure></p><p><strong>上一步用时12秒，速度极快,只是读入后没有名字，需要自己添加</strong><br>读入9个变量,跟read.table一样<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">setnames(genes, names(genes), c(&quot;chr&quot;,&quot;source&quot;,&quot;type&quot;,&quot;start&quot;,&quot;end&quot;,&quot;score&quot;,&quot;strand&quot;,&quot;phase&quot;,&quot;attributes&quot;) )</div></pre></td></tr></table></figure></p><p>可选步骤，type那一项有转录本和gene，选取gene，其他有很多转录本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">genes &lt;- genes[type == &quot;gene&quot;]</div></pre></td></tr></table></figure></p><p>我要的信息粗存在attributes中，构建函数提取<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">extract_attributes &lt;- function(gtf_attributes, att_of_interest)&#123;</div><div class="line">  att &lt;- strsplit(gtf_attributes,&quot;; &quot;)</div><div class="line">  att &lt;- gsub(&quot;\&quot;&quot;,&quot;&quot;,unlist(att))</div><div class="line">  if(!is.null(unlist(strsplit(att[grep(att_of_interest, att)], &quot; &quot;))))&#123;</div><div class="line">    return( unlist(strsplit(att[grep(att_of_interest, att)], &quot; &quot;))[2])</div><div class="line">  &#125;else&#123;</div><div class="line">    return(NA)&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p><p>举例子解释,加入我们需要gene_id<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">gtf_attributes &lt;- genes[1,9]</div><div class="line">att &lt;- strsplit(gtf_attributes,&quot;; &quot;)</div></pre></td></tr></table></figure></p><p>这一步提示non-character argument，后面我查询才知道, 对于第九列的第一行的的获取两种方式返回的格式不一样<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">genes[1,9] #data.frame</div><div class="line">genes$attributes[1] #character</div></pre></td></tr></table></figure></p><p>而strsplit的对象是character,重来<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">gtf_attributes &lt;- genes$attributes[1]</div><div class="line">att &lt;- strsplit(gtf_attributes,&quot;; &quot;)</div><div class="line">att &lt;- gsub(&quot;\&quot;&quot;,&quot;&quot;,unlist(att))</div></pre></td></tr></table></figure></p><p>grep获取位置，获取到内容后分隔,得到的第二个元素是我们需要的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">unlist(strsplit(att[grep(&quot;gene_id&quot;, att)], &quot; &quot;))[2]</div></pre></td></tr></table></figure></p><p>利用函数获得基因列表<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">genes$gene_id &lt;- unlist(lapply(genes$attributes, extract_attributes, &quot;gene_id&quot;))</div></pre></td></tr></table></figure></p><p>如果我们选择使用第一种方法rtracklayer::import，这些事情都是不需要做的！！！</p><p>#总结：rtracklayer::import最简单，fread最快，read.table可选，read_table没戏！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;下载的TCGA数据是没有注释的，需要从ensemble上面下载GTF文件，现在需要把GTF文件读入R&lt;/p&gt;
+&lt;h2 id=&quot;第一种方法rtracklayer-import&quot;&gt;&lt;a href=&quot;#第一种方法rtracklayer-import&quot; class=&quot;headerl
+      
+    
+    </summary>
+    
+      <category term="生物信息" scheme="http://guoshipeng.com/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF/"/>
+    
+    
+      <category term="R" scheme="http://guoshipeng.com/tags/R/"/>
+    
+      <category term="TCGA" scheme="http://guoshipeng.com/tags/TCGA/"/>
+    
+      <category term="编程" scheme="http://guoshipeng.com/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>用R语言来找回文数</title>
@@ -313,9 +343,9 @@
       <category term="生物信息" scheme="http://guoshipeng.com/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF/"/>
     
     
-      <category term="TCGA" scheme="http://guoshipeng.com/tags/TCGA/"/>
-    
       <category term="数据库" scheme="http://guoshipeng.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+      <category term="TCGA" scheme="http://guoshipeng.com/tags/TCGA/"/>
     
       <category term="GEPIA" scheme="http://guoshipeng.com/tags/GEPIA/"/>
     
@@ -461,9 +491,9 @@
       <category term="生物信息" scheme="http://guoshipeng.com/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF/"/>
     
     
-      <category term="TCGA" scheme="http://guoshipeng.com/tags/TCGA/"/>
-    
       <category term="数据库" scheme="http://guoshipeng.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+      <category term="TCGA" scheme="http://guoshipeng.com/tags/TCGA/"/>
     
   </entry>
   

@@ -334,6 +334,210 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://guoshipeng.com/2017/10/18/11-perl-handle/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shipeng Guo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/EDia529KCk.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="果子学生信">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/18/11-perl-handle/" itemprop="url">perl语言中文件句柄和参数设置的理解</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-18T19:56:13+08:00">
+                2017-10-18
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-10-18T20:02:06+08:00">
+                2017-10-18
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/生物信息/" itemprop="url" rel="index">
+                    <span itemprop="name">生物信息</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/10/18/11-perl-handle/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/10/18/11-perl-handle/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  777
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>这是过年期间的学习笔记，这段时间被标书虐的死去活来，休息的时候编辑了，这样提交完标书就可以学习RNA-seq了。<br><strong>文件句柄</strong> 这个概念光看字面完全不知所措，但是当我处理了一些数据时慢慢就能够理解。向别人解释一个概念最好的方法是类比，小时候听老师说地球就像鸡蛋，一下就理解了。目前我找到的能解释文件句柄的好类比就是：<br>摆渡船，没错，文件句柄就像摆渡船，他每次去对岸接一定人数的客人到这边来。而文件句柄的作用就是按照你的要求每次从文件中取出一部分数据供你处理。<br>下面举例子来理解：<br>我们要把几个序列格式化输出，要求每行60个字符。<br>原始文件如下：每一个&gt;开头的是一个序列文件，写到这里我突然间就有点伤感，这些东西我是知道的，为什么我还要写下来，给谁看呢，那么多的人在学python，只有少数人在用perl，Larry wall知道了是不是要很生气。我编辑的不是文案，我只是在拼凑破碎的心。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/18/11-perl-handle/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+    <div>
+        
+     </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://guoshipeng.com/2017/10/18/10-perl-string/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2245,7 +2449,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2395,7 +2599,7 @@
 
 <div>
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共22.7k字</span>
+  <span class="post-count">博客全站共23.3k字</span>
 </div>
 
         
