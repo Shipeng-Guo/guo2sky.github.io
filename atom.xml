@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://guoshipeng.com/"/>
-  <updated>2017-11-20T10:38:51.967Z</updated>
+  <updated>2017-11-20T12:34:37.753Z</updated>
   <id>http://guoshipeng.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://guoshipeng.com/2017/11/20/23-LCM/"/>
     <id>http://guoshipeng.com/2017/11/20/23-LCM/</id>
     <published>2017-11-20T10:37:33.000Z</published>
-    <updated>2017-11-20T10:38:51.967Z</updated>
+    <updated>2017-11-20T12:34:37.753Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.<br>What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?</p></blockquote><p>找出能被1到20整除的最小数，就是1到20的最小公倍数<br>以直觉来结题，对于每一个数判断他是不是能够被1到20的数整除，如果是就保留下来</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">n=1</div><div class="line">while(TRUE)&#123;</div><div class="line">  if (sum(((n)%%seq(1,20) == 0)) &gt;= 20) break</div><div class="line">  n = n +1</div><div class="line">&#125;</div></pre></td></tr></table></figure><p>本质上这个应该能解题，但是算了半天没反应我就只到出问题了<br>花间一下，这个数首先肯定能被20整除<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">n=1</div><div class="line">while(TRUE)&#123;</div><div class="line">  if (sum(((20*n)%%seq(1,20) == 0)) &gt;= 20) break</div><div class="line">  n = n +1</div><div class="line">&#125;</div></pre></td></tr></table></figure></p><p>还是算不出来，那应该还要同时被19整除</p><p>n=1<br>while(TRUE){<br>  if (sum(((380<em>n)%%seq(1,20) == 0)) &gt;= 20) break<br>  n = n +1<br>}<br>```<br>最后算出了答案，380</em>n=232792560</p><p>我看到也可以用分解质数方法来做，但是没有兴趣。</p>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.<br>What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?</p></blockquote><p>找出能被1到20整除的最小数，就是1到20的最小公倍数<br>以直觉来结题，对于每一个数判断他是不是能够被1到20的数整除，如果是就保留下来</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">n=1</div><div class="line">while(TRUE)&#123;</div><div class="line">  if (sum(((n)%%seq(1,20) == 0)) &gt;= 20) break</div><div class="line">  n = n +1</div><div class="line">&#125;</div></pre></td></tr></table></figure><p>本质上这个应该能解题，但是算了半天没反应我就只到出问题了<br>花间一下，这个数首先肯定能被20整除<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">n=1</div><div class="line">while(TRUE)&#123;</div><div class="line">  if (sum(((20*n)%%seq(1,20) == 0)) &gt;= 20) break</div><div class="line">  n = n +1</div><div class="line">&#125;</div></pre></td></tr></table></figure></p><p>还是算不出来，那应该还要同时被19整除<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">n=1</div><div class="line">while(TRUE)&#123;</div><div class="line">  if (sum(((380*n)%%seq(1,20) == 0)) &gt;= 20) break</div><div class="line">  n = n +1</div><div class="line">&#125;</div></pre></td></tr></table></figure></p><p>最后算出了答案，380*n=232792560</p><p>我看到也可以用分解质数方法来做，但是没有兴趣。</p>]]></content>
     
     <summary type="html">
     
@@ -395,9 +395,9 @@
       <category term="生物信息" scheme="http://guoshipeng.com/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF/"/>
     
     
-      <category term="Perl" scheme="http://guoshipeng.com/tags/Perl/"/>
-    
       <category term="字符串" scheme="http://guoshipeng.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    
+      <category term="Perl" scheme="http://guoshipeng.com/tags/Perl/"/>
     
   </entry>
   

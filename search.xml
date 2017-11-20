@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[R语言找最小公倍数]]></title>
     <url>%2F2017%2F11%2F20%2F23-LCM%2F</url>
-    <content type="text"><![CDATA[2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20? 找出能被1到20整除的最小数，就是1到20的最小公倍数以直觉来结题，对于每一个数判断他是不是能够被1到20的数整除，如果是就保留下来 12345n=1while(TRUE)&#123; if (sum(((n)%%seq(1,20) == 0)) &gt;= 20) break n = n +1&#125; 本质上这个应该能解题，但是算了半天没反应我就只到出问题了花间一下，这个数首先肯定能被20整除12345n=1while(TRUE)&#123; if (sum(((20*n)%%seq(1,20) == 0)) &gt;= 20) break n = n +1&#125; 还是算不出来，那应该还要同时被19整除 n=1while(TRUE){ if (sum(((380n)%%seq(1,20) == 0)) &gt;= 20) break n = n +1}```最后算出了答案，380n=232792560 我看到也可以用分解质数方法来做，但是没有兴趣。]]></content>
+    <content type="text"><![CDATA[2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20? 找出能被1到20整除的最小数，就是1到20的最小公倍数以直觉来结题，对于每一个数判断他是不是能够被1到20的数整除，如果是就保留下来 12345n=1while(TRUE)&#123; if (sum(((n)%%seq(1,20) == 0)) &gt;= 20) break n = n +1&#125; 本质上这个应该能解题，但是算了半天没反应我就只到出问题了花间一下，这个数首先肯定能被20整除12345n=1while(TRUE)&#123; if (sum(((20*n)%%seq(1,20) == 0)) &gt;= 20) break n = n +1&#125; 还是算不出来，那应该还要同时被19整除12345n=1while(TRUE)&#123; if (sum(((380*n)%%seq(1,20) == 0)) &gt;= 20) break n = n +1&#125; 最后算出了答案，380*n=232792560 我看到也可以用分解质数方法来做，但是没有兴趣。]]></content>
       <categories>
         <category>Project Euler</category>
       </categories>
@@ -164,8 +164,8 @@
         <category>生物信息</category>
       </categories>
       <tags>
-        <tag>Perl</tag>
         <tag>字符串</tag>
+        <tag>Perl</tag>
       </tags>
   </entry>
   <entry>
