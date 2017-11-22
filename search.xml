@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[apply家族的并行化并不完美！！！]]></title>
+    <url>%2F2017%2F11%2F22%2F24-R-paralell%2F</url>
+    <content type="text"><![CDATA[在运行完R代码版本的GSEA后，我就在想不能把GSEA并行化运行，最终发现，我并没有得到我想要的结果，百思不得其解，最终准备了一个小测试帮助我理解 12345678910111213i &lt;- c(1:100)i &lt;- matrix(i,rep(1,length(i))) #识别的是矩阵，dim(X) must have a positive lengtha &lt;- vector(length = Ng, mode = &quot;numeric&quot;)#写一个函数,计算输入的值的开放，并且存入向量mytest_fun &lt;- function(i)&#123; a[i] &lt;- sqrt(i)&#125;require(parallel)cl.cores &lt;- detectCores() #detectCores()检查当前电脑可用核数cl &lt;- makeCluster(28) #makeCluster(cl.cores)使用刚才检测的核并行运算#这是坑，parApply里面用到的函数以及变量都需要申明clusterExport(cl,c(&quot;sqrt&quot;,&quot;i&quot;,&quot;a&quot;))parApply(cl,i,2,mytest_fun) 最终有结果，但是没有存进a使用&lt;&lt;- 符号设定全局变量 123456789i &lt;- c(1:100)i &lt;- matrix(i,rep(1,length(i)))a &lt;&lt;- vector(length = Ng, mode = &quot;numeric&quot;)mytest_fun &lt;- function(i)&#123; a[i] &lt;&lt;- sqrt(i)&#125;clusterExport(cl,c(&quot;sqrt&quot;,&quot;i&quot;,&quot;a&quot;))parApply(cl,i,2,mytest_fun) 依然没有存进a中尝试其他两种方法，for循环12345a &lt;&lt;- vector(length =100, mode = &quot;numeric&quot;)mytest_fun &lt;- function(i)&#123; a[i] &lt;&lt;- sqrt(i)&#125;for (i in 1:100) mytest_fun(i) 能够写入a尝试再使用一下apply函数1234567i &lt;- c(1:100)i &lt;- matrix(i,rep(1,length(i)))a &lt;&lt;- vector(length =100, mode = &quot;numeric&quot;)mytest_fun &lt;- function(i)&#123; a[i] &lt;&lt;- sqrt(i)&#125;apply(i,2,mytest_fun) 也能够写入a 下面尝试函数如何返回多个对象，把不同的结果写入矩阵a和矩阵bparApply肯定是不行的for循环呢？毫无疑问是可以的！！只要设定全局变量即可！12345678i &lt;- c(1:100)a &lt;&lt;- vector(length = 100, mode = &quot;numeric&quot;)b &lt;&lt;- vector(length = 100, mode = &quot;numeric&quot;)mytest_fun &lt;- function(i)&#123; a[i] &lt;&lt;- sqrt(i) b[i] &lt;&lt;- log(i)&#125;for (i in 1:100) mytest_fun(i) apply呢？也是可以的！！！1234567891011i &lt;- c(1:100)i &lt;- matrix(i,rep(1,length(i)))a &lt;&lt;- vector(length = 100, mode = &quot;numeric&quot;)b &lt;&lt;- vector(length = 100, mode = &quot;numeric&quot;)clusterExport(cl,c(&quot;sqrt&quot;,&quot;i&quot;,&quot;a&quot;,&quot;b&quot;,&quot;log&quot;))mytest_fun &lt;- function(i)&#123; a[i] &lt;&lt;- sqrt(i) b[i] &lt;&lt;- log(i)&#125;apply(i,2,mytest_fun) 被&lt;&lt;-搞糊涂了，最终测试发现，只要在函数里面用这个符号就可以了 而parApply呢，无论如何返回不了多个对象，看来GSEA的并行化是泡汤了，难怪昨天使用GSEA并行化到了最后总是提示错误原来是他没有返回该返回的对象。 现在的问题是：parApply不能把结果写入全局变量a中，解决这个问题，就可以把几乎所有的循环并行化啦！！！暂时不能解决！！]]></content>
+      <categories>
+        <category>生物信息</category>
+      </categories>
+      <tags>
+        <tag>R</tag>
+        <tag>GSEA</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[R语言找最小公倍数]]></title>
     <url>%2F2017%2F11%2F20%2F23-LCM%2F</url>
     <content type="text"><![CDATA[2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20? 找出能被1到20整除的最小数，就是1到20的最小公倍数以直觉来结题，对于每一个数判断他是不是能够被1到20的数整除，如果是就保留下来 12345n=1while(TRUE)&#123; if (sum(((n)%%seq(1,20) == 0)) &gt;= 20) break n = n +1&#125; 本质上这个应该能解题，但是算了半天没反应我就只到出问题了花间一下，这个数首先肯定能被20整除12345n=1while(TRUE)&#123; if (sum(((20*n)%%seq(1,20) == 0)) &gt;= 20) break n = n +1&#125; 还是算不出来，那应该还要同时被19整除12345n=1while(TRUE)&#123; if (sum(((380*n)%%seq(1,20) == 0)) &gt;= 20) break n = n +1&#125; 最后算出了答案，380*n=232792560 我看到也可以用分解质数方法来做，但是没有兴趣。]]></content>
@@ -251,8 +263,8 @@
         <category>生物信息</category>
       </categories>
       <tags>
-        <tag>资源</tag>
         <tag>机器学习</tag>
+        <tag>资源</tag>
       </tags>
   </entry>
   <entry>
@@ -263,8 +275,8 @@
         <category>生物信息</category>
       </categories>
       <tags>
-        <tag>R</tag>
         <tag>资源</tag>
+        <tag>R</tag>
       </tags>
   </entry>
 </search>

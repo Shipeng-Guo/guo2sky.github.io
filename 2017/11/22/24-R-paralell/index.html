@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="R,GSEA," />
 
 
 
@@ -88,16 +88,18 @@
 
 
 
-<meta name="description" content="从临床中发现现象，用生物信息去筛选方向，用科学实验去证明，最终希望能够回到临床，这就是我创立这个博客的原因。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="果子学生信">
-<meta property="og:url" content="http://guoshipeng.com/categories/Project-Euler/index.html">
+<meta name="description" content="在运行完R代码版本的GSEA后，我就在想不能把GSEA并行化运行，最终发现，我并没有得到我想要的结果，百思不得其解，最终准备了一个小测试帮助我理解 12345678910111213i &amp;lt;- c(1:100)i &amp;lt;- matrix(i,rep(1,length(i))) #识别的是矩阵，dim(X) must have a positive lengtha &amp;lt;- vector(l">
+<meta name="keywords" content="R,GSEA">
+<meta property="og:type" content="article">
+<meta property="og:title" content="apply家族的并行化并不完美！！！">
+<meta property="og:url" content="http://guoshipeng.com/2017/11/22/24-R-paralell/index.html">
 <meta property="og:site_name" content="果子学生信">
-<meta property="og:description" content="从临床中发现现象，用生物信息去筛选方向，用科学实验去证明，最终希望能够回到临床，这就是我创立这个博客的原因。">
+<meta property="og:description" content="在运行完R代码版本的GSEA后，我就在想不能把GSEA并行化运行，最终发现，我并没有得到我想要的结果，百思不得其解，最终准备了一个小测试帮助我理解 12345678910111213i &amp;lt;- c(1:100)i &amp;lt;- matrix(i,rep(1,length(i))) #识别的是矩阵，dim(X) must have a positive lengtha &amp;lt;- vector(l">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-11-22T07:17:35.639Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="果子学生信">
-<meta name="twitter:description" content="从临床中发现现象，用生物信息去筛选方向，用科学实验去证明，最终希望能够回到临床，这就是我创立这个博客的原因。">
+<meta name="twitter:title" content="apply家族的并行化并不完美！！！">
+<meta name="twitter:description" content="在运行完R代码版本的GSEA后，我就在想不能把GSEA并行化运行，最终发现，我并没有得到我想要的结果，百思不得其解，最终准备了一个小测试帮助我理解 12345678910111213i &amp;lt;- c(1:100)i &amp;lt;- matrix(i,rep(1,length(i))) #识别的是矩阵，dim(X) must have a positive lengtha &amp;lt;- vector(l">
 
 
 
@@ -127,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://guoshipeng.com/categories/Project-Euler/"/>
+  <link rel="canonical" href="http://guoshipeng.com/2017/11/22/24-R-paralell/"/>
 
 
 
 
 
-  <title>分类: Project Euler | 果子学生信</title>
+  <title>apply家族的并行化并不完美！！！ | 果子学生信</title>
   
 
 
@@ -161,7 +163,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -319,167 +321,270 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block category">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>Project Euler<small>分类</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://guoshipeng.com/2017/11/22/24-R-paralell/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shipeng Guo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/EDia529KCk.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="果子学生信">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2017/11/20/23-LCM/" itemprop="url">
-              
-                <span itemprop="name">R语言找最小公倍数</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">apply家族的并行化并不完美！！！</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-11-20T18:37:33+08:00"
-              content="2017-11-20" >
-          11-20
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-22T15:16:36+08:00">
+                2017-11-22
+              </time>
+            
 
-    </header>
-  </article>
+            
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-11-22T15:17:35+08:00">
+                2017-11-22
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/生物信息/" itemprop="url" rel="index">
+                    <span itemprop="name">生物信息</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/11/22/24-R-paralell/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/11/22/24-R-paralell/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-eye"></i> 阅读次数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  609
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/11/15/19-find-palin/" itemprop="url">
-              
-                <span itemprop="name">用R语言来找回文数</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-11-15T18:31:38+08:00"
-              content="2017-11-15" >
-          11-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/11/15/18-find-prime/" itemprop="url">
-              
-                <span itemprop="name">万万使不得！-R语言中的循环套循环</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-11-15T10:32:57+08:00"
-              content="2017-11-15" >
-          11-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/11/14/17-loops-in-r/" itemprop="url">
-              
-                <span itemprop="name">R语言中的循环</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-11-14T09:58:33+08:00"
-              content="2017-11-14" >
-          11-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/11/13/16-project-eluer-01-3-and-5/" itemprop="url">
-              
-                <span itemprop="name">R语言究竟能不能优雅？</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-11-13T19:12:50+08:00"
-              content="2017-11-13" >
-          11-13
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <p>在运行完R代码版本的GSEA后，我就在想不能把GSEA并行化运行，<br>最终发现，我并没有得到我想要的结果，百思不得其解，最终准备了一个小测试帮助我理解</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">i &lt;- c(1:100)</div><div class="line">i &lt;- matrix(i,rep(1,length(i))) #识别的是矩阵，dim(X) must have a positive length</div><div class="line">a &lt;- vector(length = Ng, mode = &quot;numeric&quot;)</div><div class="line">#写一个函数,计算输入的值的开放，并且存入向量</div><div class="line">mytest_fun &lt;- function(i)&#123;</div><div class="line">  a[i] &lt;- sqrt(i)</div><div class="line">&#125;</div><div class="line">require(parallel)</div><div class="line">cl.cores &lt;- detectCores() #detectCores()检查当前电脑可用核数</div><div class="line">cl &lt;- makeCluster(28) #makeCluster(cl.cores)使用刚才检测的核并行运算</div><div class="line">#这是坑，parApply里面用到的函数以及变量都需要申明</div><div class="line">clusterExport(cl,c(&quot;sqrt&quot;,&quot;i&quot;,&quot;a&quot;))</div><div class="line">parApply(cl,i,2,mytest_fun)</div></pre></td></tr></table></figure>
+<p>最终有结果，但是没有存进a<br>使用&lt;&lt;- 符号设定全局变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">i &lt;- c(1:100)</div><div class="line">i &lt;- matrix(i,rep(1,length(i)))</div><div class="line">a &lt;&lt;- vector(length = Ng, mode = &quot;numeric&quot;)</div><div class="line">mytest_fun &lt;- function(i)&#123;</div><div class="line">  a[i] &lt;&lt;- sqrt(i)</div><div class="line">&#125;</div><div class="line"></div><div class="line">clusterExport(cl,c(&quot;sqrt&quot;,&quot;i&quot;,&quot;a&quot;))</div><div class="line">parApply(cl,i,2,mytest_fun)</div></pre></td></tr></table></figure>
+<p>依然没有存进a中<br>尝试其他两种方法，<br>for循环<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">a &lt;&lt;- vector(length =100, mode = &quot;numeric&quot;)</div><div class="line">mytest_fun &lt;- function(i)&#123;</div><div class="line">  a[i] &lt;&lt;- sqrt(i)</div><div class="line">&#125;</div><div class="line">for (i in 1:100) mytest_fun(i)</div></pre></td></tr></table></figure></p>
+<p>能够写入a<br>尝试再使用一下apply函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">i &lt;- c(1:100)</div><div class="line">i &lt;- matrix(i,rep(1,length(i)))</div><div class="line">a &lt;&lt;- vector(length =100, mode = &quot;numeric&quot;)</div><div class="line">mytest_fun &lt;- function(i)&#123;</div><div class="line">  a[i] &lt;&lt;- sqrt(i)</div><div class="line">&#125;</div><div class="line">apply(i,2,mytest_fun)</div></pre></td></tr></table></figure></p>
+<p>也能够写入a</p>
+<p>下面尝试函数如何返回多个对象，把不同的结果写入矩阵a和矩阵b<br>parApply肯定是不行的<br>for循环呢？毫无疑问是可以的！！只要设定全局变量即可！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">i &lt;- c(1:100)</div><div class="line">a &lt;&lt;- vector(length = 100, mode = &quot;numeric&quot;)</div><div class="line">b &lt;&lt;- vector(length = 100, mode = &quot;numeric&quot;)</div><div class="line">mytest_fun &lt;- function(i)&#123;</div><div class="line">  a[i] &lt;&lt;- sqrt(i)</div><div class="line">  b[i] &lt;&lt;- log(i)</div><div class="line">&#125;</div><div class="line">for (i in 1:100) mytest_fun(i)</div></pre></td></tr></table></figure></p>
+<p>apply呢？也是可以的！！！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">i &lt;- c(1:100)</div><div class="line">i &lt;- matrix(i,rep(1,length(i)))</div><div class="line">a &lt;&lt;- vector(length = 100, mode = &quot;numeric&quot;)</div><div class="line">b &lt;&lt;- vector(length = 100, mode = &quot;numeric&quot;)</div><div class="line">clusterExport(cl,c(&quot;sqrt&quot;,&quot;i&quot;,&quot;a&quot;,&quot;b&quot;,&quot;log&quot;))</div><div class="line"></div><div class="line">mytest_fun &lt;- function(i)&#123;</div><div class="line">  a[i] &lt;&lt;- sqrt(i)</div><div class="line">  b[i] &lt;&lt;- log(i)</div><div class="line">&#125;</div><div class="line">apply(i,2,mytest_fun)</div></pre></td></tr></table></figure></p>
+<p>被&lt;&lt;-搞糊涂了，最终测试发现，只要在函数里面用这个符号就可以了</p>
+<p>而parApply呢，无论如何返回不了多个对象，看来GSEA的并行化是泡汤了，难怪昨天使用GSEA并行化到了最后总是提示错误<br>原来是他没有返回该返回的对象。</p>
+<p>现在的问题是：parApply不能把结果写入全局变量a中，解决这个问题，就可以把几乎所有的循环并行化啦！！！<br>暂时不能解决！！</p>
 
       
     </div>
 
+    
+    
+    
+    <div>
+        
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">------ 本文结束------</div>
+    
+</div>
+
+        
+     </div>
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Shipeng Guo
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://guoshipeng.com/2017/11/22/24-R-paralell/" title="apply家族的并行化并不完美！！！">http://guoshipeng.com/2017/11/22/24-R-paralell/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/R/" rel="tag"><i class="fa fa-tag"></i> R</a>
+          
+            <a href="/tags/GSEA/" rel="tag"><i class="fa fa-tag"></i> GSEA</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/20/23-LCM/" rel="next" title="R语言找最小公倍数">
+                <i class="fa fa-chevron-left"></i> R语言找最小公倍数
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -487,6 +592,20 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -805,6 +924,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 
@@ -822,6 +945,18 @@
       <script id="dsq-count-scr" src="https://http-guoshipeng-com-1.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://guoshipeng.com/2017/11/22/24-R-paralell/';
+          this.page.identifier = '2017/11/22/24-R-paralell/';
+          this.page.title = 'apply家族的并行化并不完美！！！';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://http-guoshipeng-com-1.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
