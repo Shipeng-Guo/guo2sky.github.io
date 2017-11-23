@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="R,GSEA,并行," />
 
 
 
@@ -88,16 +88,18 @@
 
 
 
-<meta name="description" content="从临床中发现现象，用生物信息去筛选方向，用科学实验去证明，最终希望能够回到临床，这就是我创立这个博客的原因。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="果子学生信">
-<meta property="og:url" content="http://guoshipeng.com/categories/生物信息/page/2/index.html">
+<meta name="description" content="昨天还是有遗憾，一是没有搞清楚全局赋值号怎么使用，今天过后我觉得昨天五迷三道的二是还是不知道apply和parApply通用的返回多个对象的方法，今天算是解决了。123456789i &amp;lt;- c(1:100)i &amp;lt;- matrix(i,rep(1,length(i)))a &amp;lt;&amp;lt;- vector(length = 100, mode = &amp;quot;numeric&amp;quot;)">
+<meta name="keywords" content="R,GSEA,并行">
+<meta property="og:type" content="article">
+<meta property="og:title" content="R语言的并行化处理-返回多个对象">
+<meta property="og:url" content="http://guoshipeng.com/2017/11/23/25-R-paralell-subset/index.html">
 <meta property="og:site_name" content="果子学生信">
-<meta property="og:description" content="从临床中发现现象，用生物信息去筛选方向，用科学实验去证明，最终希望能够回到临床，这就是我创立这个博客的原因。">
+<meta property="og:description" content="昨天还是有遗憾，一是没有搞清楚全局赋值号怎么使用，今天过后我觉得昨天五迷三道的二是还是不知道apply和parApply通用的返回多个对象的方法，今天算是解决了。123456789i &amp;lt;- c(1:100)i &amp;lt;- matrix(i,rep(1,length(i)))a &amp;lt;&amp;lt;- vector(length = 100, mode = &amp;quot;numeric&amp;quot;)">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-11-23T06:10:12.534Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="果子学生信">
-<meta name="twitter:description" content="从临床中发现现象，用生物信息去筛选方向，用科学实验去证明，最终希望能够回到临床，这就是我创立这个博客的原因。">
+<meta name="twitter:title" content="R语言的并行化处理-返回多个对象">
+<meta name="twitter:description" content="昨天还是有遗憾，一是没有搞清楚全局赋值号怎么使用，今天过后我觉得昨天五迷三道的二是还是不知道apply和parApply通用的返回多个对象的方法，今天算是解决了。123456789i &amp;lt;- c(1:100)i &amp;lt;- matrix(i,rep(1,length(i)))a &amp;lt;&amp;lt;- vector(length = 100, mode = &amp;quot;numeric&amp;quot;)">
 
 
 
@@ -127,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://guoshipeng.com/categories/生物信息/page/2/"/>
+  <link rel="canonical" href="http://guoshipeng.com/2017/11/23/25-R-paralell-subset/"/>
 
 
 
 
 
-  <title>分类: 生物信息 | 果子学生信</title>
+  <title>R语言的并行化处理-返回多个对象 | 果子学生信</title>
   
 
 
@@ -161,7 +163,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -319,283 +321,275 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block category">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>生物信息<small>分类</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://guoshipeng.com/2017/11/23/25-R-paralell-subset/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shipeng Guo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/EDia529KCk.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="果子学生信">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2017/10/18/10-perl-string/" itemprop="url">
-              
-                <span itemprop="name">perl语言中的字符串处理及排序</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">R语言的并行化处理-返回多个对象</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-10-18T19:44:47+08:00"
-              content="2017-10-18" >
-          10-18
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-23T14:09:09+08:00">
+                2017-11-23
+              </time>
+            
 
-    </header>
-  </article>
+            
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-11-23T14:10:12+08:00">
+                2017-11-23
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/生物信息/" itemprop="url" rel="index">
+                    <span itemprop="name">生物信息</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/11/23/25-R-paralell-subset/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/11/23/25-R-paralell-subset/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-eye"></i> 阅读次数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  652
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/10/18/09-GEPIA/" itemprop="url">
-              
-                <span itemprop="name">可能是最好用的TCGA数据库GEPIA</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-10-18T19:18:27+08:00"
-              content="2017-10-18" >
-          10-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/10/18/08-linux-apply/" itemprop="url">
-              
-                <span itemprop="name">Linux 安装后要做的事</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-10-18T19:05:08+08:00"
-              content="2017-10-18" >
-          10-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/10/17/07_vim/" itemprop="url">
-              
-                <span itemprop="name">编辑器之神VIM的使用及配置</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-10-17T20:59:01+08:00"
-              content="2017-10-17" >
-          10-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/10/17/05-server-self-made/" itemprop="url">
-              
-                <span itemprop="name">临床医生的服务器组装记录</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-10-17T20:54:34+08:00"
-              content="2017-10-17" >
-          10-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/10/17/04-TCGA/" itemprop="url">
-              
-                <span itemprop="name">TCGA数据库大集合</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-10-17T20:51:45+08:00"
-              content="2017-10-17" >
-          10-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/10/17/03-database-learning/" itemprop="url">
-              
-                <span itemprop="name">那些我学过的科研数据库</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-10-17T20:49:59+08:00"
-              content="2017-10-17" >
-          10-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/10/17/02-machine-learning/" itemprop="url">
-              
-                <span itemprop="name">机器学习资源汇总</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-10-17T20:44:05+08:00"
-              content="2017-10-17" >
-          10-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/10/17/01_R_resource/" itemprop="url">
-              
-                <span itemprop="name">R语言资源汇总</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-10-17T17:29:50+08:00"
-              content="2017-10-17" >
-          10-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <p>昨天还是有遗憾，一是没有搞清楚全局赋值号怎么使用，今天过后我觉得昨天五迷三道的<br>二是还是不知道apply和parApply通用的返回多个对象的方法，今天算是解决了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">i &lt;- c(1:100)</div><div class="line">i &lt;- matrix(i,rep(1,length(i)))</div><div class="line">a &lt;&lt;- vector(length = 100, mode = &quot;numeric&quot;)</div><div class="line">b &lt;&lt;- vector(length = 100, mode = &quot;numeric&quot;)</div><div class="line">mytest_fun &lt;- function(i)&#123;</div><div class="line">  a[i] &lt;&lt;- sqrt(i)</div><div class="line">  b[i] &lt;&lt;- log(i)</div><div class="line">&#125;</div><div class="line">result &lt;- apply(i,2,mytest_fun)</div></pre></td></tr></table></figure></p>
+<p>这时候返回的是result是b的结果，而a和b都是有正常结果的，因为我用了&lt;&lt;- 全局赋值符号<br>如果我把外面的&lt;&lt;-去掉呢？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">i &lt;- c(1:100)</div><div class="line">i &lt;- matrix(i,rep(1,length(i)))</div><div class="line">a &lt;- vector(length = 100, mode = &quot;numeric&quot;)</div><div class="line">b &lt;- vector(length = 100, mode = &quot;numeric&quot;)</div><div class="line">mytest_fun &lt;- function(i)&#123;</div><div class="line">  a[i] &lt;&lt;- sqrt(i)</div><div class="line">  b[i] &lt;&lt;- log(i)</div><div class="line">&#125;</div><div class="line">result &lt;- apply(i,2,mytest_fun)</div></pre></td></tr></table></figure></p>
+<p>结果是一样的，a和b有正常的结果，而result返回的是b<br>如果我把函数里面的&lt;&lt;-去掉呢？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">i &lt;- c(1:100)</div><div class="line">i &lt;- matrix(i,rep(1,length(i)))</div><div class="line">a &lt;&lt;- vector(length = 100, mode = &quot;numeric&quot;)</div><div class="line">b &lt;&lt;- vector(length = 100, mode = &quot;numeric&quot;)</div><div class="line">mytest_fun &lt;- function(i)&#123;</div><div class="line">  a[i] &lt;- sqrt(i)</div><div class="line">  b[i] &lt;- log(i)</div><div class="line">&#125;</div><div class="line">result &lt;- apply(i,2,mytest_fun)</div></pre></td></tr></table></figure></p>
+<p>里面肯定是不能去的，去掉后就不可能改变外面的a和b<br>所以这个符号只要在函数里面用即可！！<br>但是，洲更说，这种方法太危险！！<br>今天学习GSEA的代码时，返现函数可以返回多个对象的，只要把多个对象组成list，再return即可<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">i &lt;- c(1:100)</div><div class="line">i &lt;- matrix(i,rep(1,length(i)))</div><div class="line">mytest_fun &lt;- function(i)&#123;</div><div class="line">  a &lt;- sqrt(i)</div><div class="line">  b &lt;- log(i)</div><div class="line">  return(list(a = a,b =b ))##最好对a和b赋值，这样取出时辨识度很高</div><div class="line">&#125;</div><div class="line">result &lt;- apply(i,2,mytest_fun)</div></pre></td></tr></table></figure></p>
+<p>这时候我们发现result是由100个list组成的list，每个list有两个元素<br>我们分别将他们取出<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">for (i in 1:100) &#123;a[i] &lt;-result[[i]]$a&#125;</div><div class="line">for (i in 1:100) &#123;b[i] &lt;-result[[i]]$b&#125;</div></pre></td></tr></table></figure></p>
+<p>得到了想要的a和b<br>这时候我来看一下parApply能不能这样使用呢？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">mytest_fun &lt;- function(i)&#123;</div><div class="line">  a &lt;- sqrt(i)</div><div class="line">  b &lt;- log(i)</div><div class="line">  return(list(a = a,b =b ))</div><div class="line">&#125;</div><div class="line">i &lt;- c(1:100)</div><div class="line">i &lt;- matrix(i,rep(1,length(i)))</div><div class="line">require(parallel)</div><div class="line">cl.cores &lt;- detectCores()</div><div class="line">cl &lt;- makeCluster(28)</div><div class="line">clusterExport(cl,c(&quot;sqrt&quot;,&quot;i&quot;,&quot;a&quot;,&quot;b&quot;,&quot;log&quot;))</div><div class="line">result &lt;- parApply(cl,i,2,mytest_fun)</div></pre></td></tr></table></figure></p>
+<p>一样的的result<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">for (i in 1:100) &#123;a[i] &lt;-result[[i]]$a&#125;</div><div class="line">for (i in 1:100) &#123;b[i] &lt;-result[[i]]$b&#125;</div></pre></td></tr></table></figure></p>
+<p>取出也是没有问题的！！</p>
+<p>###总结：</p>
+<blockquote>
+<ul>
+<li>函数默认会返回最后一个对象，使用return可以指定返回的对象,而return合用list可以返回多个对象，获取元素时只要使用’$‘符号即可</li>
+<li>而apply以及parApply一样的可以返回多个元素，只是这时候，返回的元素结构产生了变化，不能直接取出，逐个获取！！！</li>
+</ul>
+</blockquote>
 
       
     </div>
 
+    
+    
+    
+    <div>
+        
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">------ 本文结束------</div>
+    
+</div>
+
+        
+     </div>
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Shipeng Guo
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://guoshipeng.com/2017/11/23/25-R-paralell-subset/" title="R语言的并行化处理-返回多个对象">http://guoshipeng.com/2017/11/23/25-R-paralell-subset/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/R/" rel="tag"><i class="fa fa-tag"></i> R</a>
+          
+            <a href="/tags/GSEA/" rel="tag"><i class="fa fa-tag"></i> GSEA</a>
+          
+            <a href="/tags/并行/" rel="tag"><i class="fa fa-tag"></i> 并行</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/22/24-R-paralell/" rel="next" title="apply家族的并行化并不完美！！！">
+                <i class="fa fa-chevron-left"></i> apply家族的并行化并不完美！！！
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/categories/生物信息/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/categories/生物信息/">1</a><span class="page-number current">2</span>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -603,6 +597,20 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -921,6 +929,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 
@@ -938,6 +950,18 @@
       <script id="dsq-count-scr" src="https://http-guoshipeng-com-1.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://guoshipeng.com/2017/11/23/25-R-paralell-subset/';
+          this.page.identifier = '2017/11/23/25-R-paralell-subset/';
+          this.page.title = 'R语言的并行化处理-返回多个对象';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://http-guoshipeng-com-1.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
