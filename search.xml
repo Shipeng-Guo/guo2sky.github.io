@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[26-easyTCGA]]></title>
+    <url>%2F2017%2F12%2F01%2F26-easyTCGA%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[R语言的并行化处理-返回多个对象]]></title>
     <url>%2F2017%2F11%2F23%2F25-R-paralell-subset%2F</url>
     <content type="text"><![CDATA[昨天还是有遗憾，一是没有搞清楚全局赋值号怎么使用，今天过后我觉得昨天五迷三道的二是还是不知道apply和parApply通用的返回多个对象的方法，今天算是解决了。123456789i &lt;- c(1:100)i &lt;- matrix(i,rep(1,length(i)))a &lt;&lt;- vector(length = 100, mode = &quot;numeric&quot;)b &lt;&lt;- vector(length = 100, mode = &quot;numeric&quot;)mytest_fun &lt;- function(i)&#123; a[i] &lt;&lt;- sqrt(i) b[i] &lt;&lt;- log(i)&#125;result &lt;- apply(i,2,mytest_fun) 这时候返回的是result是b的结果，而a和b都是有正常结果的，因为我用了&lt;&lt;- 全局赋值符号如果我把外面的&lt;&lt;-去掉呢？123456789i &lt;- c(1:100)i &lt;- matrix(i,rep(1,length(i)))a &lt;- vector(length = 100, mode = &quot;numeric&quot;)b &lt;- vector(length = 100, mode = &quot;numeric&quot;)mytest_fun &lt;- function(i)&#123; a[i] &lt;&lt;- sqrt(i) b[i] &lt;&lt;- log(i)&#125;result &lt;- apply(i,2,mytest_fun) 结果是一样的，a和b有正常的结果，而result返回的是b如果我把函数里面的&lt;&lt;-去掉呢？123456789i &lt;- c(1:100)i &lt;- matrix(i,rep(1,length(i)))a &lt;&lt;- vector(length = 100, mode = &quot;numeric&quot;)b &lt;&lt;- vector(length = 100, mode = &quot;numeric&quot;)mytest_fun &lt;- function(i)&#123; a[i] &lt;- sqrt(i) b[i] &lt;- log(i)&#125;result &lt;- apply(i,2,mytest_fun) 里面肯定是不能去的，去掉后就不可能改变外面的a和b所以这个符号只要在函数里面用即可！！但是，洲更说，这种方法太危险！！今天学习GSEA的代码时，返现函数可以返回多个对象的，只要把多个对象组成list，再return即可12345678i &lt;- c(1:100)i &lt;- matrix(i,rep(1,length(i)))mytest_fun &lt;- function(i)&#123; a &lt;- sqrt(i) b &lt;- log(i) return(list(a = a,b =b ))##最好对a和b赋值，这样取出时辨识度很高&#125;result &lt;- apply(i,2,mytest_fun) 这时候我们发现result是由100个list组成的list，每个list有两个元素我们分别将他们取出12for (i in 1:100) &#123;a[i] &lt;-result[[i]]$a&#125;for (i in 1:100) &#123;b[i] &lt;-result[[i]]$b&#125; 得到了想要的a和b这时候我来看一下parApply能不能这样使用呢？123456789101112mytest_fun &lt;- function(i)&#123; a &lt;- sqrt(i) b &lt;- log(i) return(list(a = a,b =b ))&#125;i &lt;- c(1:100)i &lt;- matrix(i,rep(1,length(i)))require(parallel)cl.cores &lt;- detectCores()cl &lt;- makeCluster(28)clusterExport(cl,c(&quot;sqrt&quot;,&quot;i&quot;,&quot;a&quot;,&quot;b&quot;,&quot;log&quot;))result &lt;- parApply(cl,i,2,mytest_fun) 一样的的result12for (i in 1:100) &#123;a[i] &lt;-result[[i]]$a&#125;for (i in 1:100) &#123;b[i] &lt;-result[[i]]$b&#125; 取出也是没有问题的！！ ###总结： 函数默认会返回最后一个对象，使用return可以指定返回的对象,而return合用list可以返回多个对象，获取元素时只要使用’$‘符号即可 而apply以及parApply一样的可以返回多个元素，只是这时候，返回的元素结构产生了变化，不能直接取出，逐个获取！！！]]></content>
@@ -190,8 +195,8 @@
         <category>生物信息</category>
       </categories>
       <tags>
-        <tag>字符串</tag>
         <tag>Perl</tag>
+        <tag>字符串</tag>
       </tags>
   </entry>
   <entry>
