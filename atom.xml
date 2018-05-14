@@ -469,9 +469,9 @@
       <category term="生物信息" scheme="http://guoshipeng.com/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF/"/>
     
     
-      <category term="字符串" scheme="http://guoshipeng.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-    
       <category term="Perl" scheme="http://guoshipeng.com/tags/Perl/"/>
+    
+      <category term="字符串" scheme="http://guoshipeng.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
   </entry>
   
@@ -501,9 +501,9 @@
       <category term="生物信息" scheme="http://guoshipeng.com/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF/"/>
     
     
-      <category term="数据库" scheme="http://guoshipeng.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
       <category term="TCGA" scheme="http://guoshipeng.com/tags/TCGA/"/>
+    
+      <category term="数据库" scheme="http://guoshipeng.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
       <category term="GEPIA" scheme="http://guoshipeng.com/tags/GEPIA/"/>
     
