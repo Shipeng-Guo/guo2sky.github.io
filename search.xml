@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[新的开始测试阶段]]></title>
+    <url>%2F2018%2F05%2F16%2F27-test%2F</url>
+    <content type="text"><![CDATA[胡乱地写一写]]></content>
+      <categories>
+        <category>生物信息</category>
+      </categories>
+      <tags>
+        <tag>R</tag>
+        <tag>GSEA</tag>
+        <tag>并行</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[26-easyTCGA]]></title>
     <url>%2F2017%2F12%2F01%2F26-easyTCGA%2F</url>
     <content type="text"></content>
@@ -51,8 +64,8 @@
         <category>生物信息</category>
       </categories>
       <tags>
-        <tag>TCGA</tag>
         <tag>R</tag>
+        <tag>TCGA</tag>
       </tags>
   </entry>
   <entry>
@@ -63,8 +76,8 @@
         <category>生物信息</category>
       </categories>
       <tags>
-        <tag>TCGA</tag>
         <tag>R</tag>
+        <tag>TCGA</tag>
         <tag>编程</tag>
       </tags>
   </entry>
@@ -76,8 +89,8 @@
         <category>生物信息</category>
       </categories>
       <tags>
-        <tag>TCGA</tag>
         <tag>R</tag>
+        <tag>TCGA</tag>
         <tag>编程</tag>
       </tags>
   </entry>
@@ -137,8 +150,8 @@
         <category>生物信息</category>
       </categories>
       <tags>
-        <tag>TCGA</tag>
         <tag>R</tag>
+        <tag>TCGA</tag>
       </tags>
   </entry>
   <entry>
@@ -195,8 +208,8 @@
         <category>生物信息</category>
       </categories>
       <tags>
-        <tag>Perl</tag>
         <tag>字符串</tag>
+        <tag>Perl</tag>
       </tags>
   </entry>
   <entry>
@@ -207,8 +220,8 @@
         <category>生物信息</category>
       </categories>
       <tags>
-        <tag>TCGA</tag>
         <tag>数据库</tag>
+        <tag>TCGA</tag>
         <tag>GEPIA</tag>
       </tags>
   </entry>
@@ -259,8 +272,8 @@
         <category>生物信息</category>
       </categories>
       <tags>
-        <tag>TCGA</tag>
         <tag>数据库</tag>
+        <tag>TCGA</tag>
       </tags>
   </entry>
   <entry>
@@ -282,8 +295,8 @@
         <category>生物信息</category>
       </categories>
       <tags>
-        <tag>机器学习</tag>
         <tag>资源</tag>
+        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -294,8 +307,8 @@
         <category>生物信息</category>
       </categories>
       <tags>
-        <tag>资源</tag>
         <tag>R</tag>
+        <tag>资源</tag>
       </tags>
   </entry>
 </search>
