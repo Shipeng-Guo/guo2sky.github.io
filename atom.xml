@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://guoshipeng.com/"/>
-  <updated>2018-05-16T09:42:28.323Z</updated>
+  <updated>2017-12-01T13:38:56.000Z</updated>
   <id>http://guoshipeng.com/</id>
   
   <author>
@@ -15,36 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>新的开始测试阶段</title>
-    <link href="http://guoshipeng.com/2018/05/16/27-test/"/>
-    <id>http://guoshipeng.com/2018/05/16/27-test/</id>
-    <published>2018-05-16T09:40:24.000Z</published>
-    <updated>2018-05-16T09:42:28.323Z</updated>
-    
-    <content type="html"><![CDATA[<p>胡乱地写一写</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;胡乱地写一写&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-      <category term="生物信息" scheme="http://guoshipeng.com/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF/"/>
-    
-    
-      <category term="R" scheme="http://guoshipeng.com/tags/R/"/>
-    
-      <category term="GSEA" scheme="http://guoshipeng.com/tags/GSEA/"/>
-    
-      <category term="并行" scheme="http://guoshipeng.com/tags/%E5%B9%B6%E8%A1%8C/"/>
-    
-  </entry>
   
   <entry>
     <title>26-easyTCGA</title>
@@ -499,9 +469,9 @@
       <category term="生物信息" scheme="http://guoshipeng.com/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF/"/>
     
     
-      <category term="字符串" scheme="http://guoshipeng.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-    
       <category term="Perl" scheme="http://guoshipeng.com/tags/Perl/"/>
+    
+      <category term="字符串" scheme="http://guoshipeng.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
   </entry>
   
@@ -531,9 +501,9 @@
       <category term="生物信息" scheme="http://guoshipeng.com/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF/"/>
     
     
-      <category term="数据库" scheme="http://guoshipeng.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
       <category term="TCGA" scheme="http://guoshipeng.com/tags/TCGA/"/>
+    
+      <category term="数据库" scheme="http://guoshipeng.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
       <category term="GEPIA" scheme="http://guoshipeng.com/tags/GEPIA/"/>
     
@@ -566,6 +536,33 @@
     
     
       <category term="Linux" scheme="http://guoshipeng.com/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>编辑器之神VIM的使用及配置</title>
+    <link href="http://guoshipeng.com/2017/10/17/07_vim/"/>
+    <id>http://guoshipeng.com/2017/10/17/07_vim/</id>
+    <published>2017-10-17T12:59:01.000Z</published>
+    <updated>2017-10-18T11:00:36.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>做生信要写代码，写代码就需要编辑器，在linux系统下有一款编辑器不能被忽略，就是VIM，江湖人称编辑器之神。当然，在一堆程序员里面千万不要讨论语言的好坏，也不能突然冒一句perl是世界上最好的脚本语言，不能，千万不能，要不然死的很难看。</p><p>所以讨论编辑器时也不能随便说哪个最好，人们常说vim是编辑器之神，继而又说他的对手emacs是神的编辑器。绕来绕去就是为了一个名分，所谓树争一身皮，编辑器争一口气。<br>VIM用好了以后的状态是这样子的：</p><blockquote><p>写过程序的人都知道，编程的时候双手大部分时间都放在键盘上，或编码、或插入、或移动、或定位、或查找，这种连续操作的时间和频率远远大于阅读、翻页、设置字体、摆弄样式等文案工作，而二者往往产生很多停顿和间隙，而编程时的停顿是非常影响编程效率的，所以 Vim 的设计理念就是通过模式的转换、命令的组合和不计其数的插件，保证程序员在编程的过程中，双手尽可能保留在键盘中央的区域，并且，<strong>不需要鼠标</strong>。<br><a id="more"></a></p></blockquote><p>大多人看不起VIM的原因可能有一个：VIM上手容易，但学习曲线陡峭，很多人没有学会就放弃了。这不是我说的，是池建强老师说的。VIM的故事和详细用法可以查看池建强老师写的VIM系列，最终他把这个系列写成了一篇长文，<a href="http://mp.weixin.qq.com/s?__biz=MjM5ODQ2MDIyMA==&amp;mid=2650712546&amp;idx=1&amp;sn=c4db99547b75d6001b3cfaa6cbc0e715&amp;scene=21#wechat_redirect" target="_blank" rel="external">说，谁才是最帅的编程工具？</a>十分精彩，我觉得可以去读一读。微信不能外部链接，我把他放在了阅读原文里面。<br>VIM内置在linux系统下，在命令行输入 vim 然后enter键，就可以看到vim<br>vim的上手很简单，他有四种模式</p><ul><li>普通模式：Vim 启动后的默认模式，用来移动光标、删除文本、覆盖输入文本、恢复操作、粘贴文本等等。</li><li>插入模式：输入 i 或 a 进入插入模式，在这个模式下敲击键盘会往文字缓冲区增加文字，相当于普通编辑器的编辑模式。</li><li>可视模式：选择文本，可以行选、块选和依次选择，选择后可以进行复制、删除、排序等操作。</li><li>命令模式：执行内部和外部命令，通过「: / ? !」可以进入命令模式，分别对应的是：执行内部命令、向上或向下搜索、执行外部命令。</li></ul><p>假设我们写个名字叫11的perl程序，直接在命令行输入vim 11.pl enter键就OK了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim 11.pl</div></pre></td></tr></table></figure></p><p>接着我们按一下a或者i就进入插入模式，这时候在就可以通过键盘随便输入了，你打字的时候看一下左下方会有insert字样<br>假设我们现在已经写完程序，想要保存退出怎么办呢？<br>按esc键切换到命令行模式，同时按shift+：，就是shift键和冒号一起按，这时候左下角会出现冒号标志<br>输入wq就是保存退出<br>输入q！就是不保存直接退出<br>注意，如果操作不了，一定要确定正在使用的是英文输入法<br>这样就已经学完了</p><p>这时候要想到vim是效率神器，而且不需要鼠标就可以方便的复制粘贴，跳跃，所以接下来会有很多命令要学，我自己掌握的也不好，就不献丑了，至少我已经在用了，perl程序全是使用vim写的。</p><p>现在有个问题就是vim不好看，虽然不需要鼠标，全键盘操作，但我觉得界面太丑，没有电影里面那种花花绿绿代码齐发的感觉，现在我知道那个叫语法高亮，所以我又查了一下vim的配置。</p><blockquote><p><strong>很多时候长大了那些执念就是为了完成小时候未完成的心愿。</strong></p></blockquote><p>##VIM的配置<br>切换到家目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd ~</div></pre></td></tr></table></figure></p><p>创建.vimrc文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim .vimrc</div></pre></td></tr></table></figure></p><p>进入插入模式，复制下面代码，右击鼠标粘贴，不能是使用ctrl+V<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">filetype on</div><div class="line">syntax on</div><div class="line">set nu</div><div class="line">set cindent</div><div class="line">set ruler</div><div class="line">set tabstop=4</div><div class="line">set softtabstop=4</div><div class="line">set expandtab</div><div class="line">set shiftwidth=4</div><div class="line">set backspace=indent,eol,start</div><div class="line">set completeopt=preview,menu</div><div class="line">set cursorline</div><div class="line">set magic</div><div class="line">set autoindent</div><div class="line">set smartindent</div><div class="line">set showmatch</div><div class="line">set history=1000</div><div class="line">set nobackup</div><div class="line">set noswapfile</div><div class="line">set ignorecase</div><div class="line">set hlsearch</div><div class="line">set incsearch</div><div class="line">inoremap &apos; &apos;&apos;&lt;ESC&gt;i</div><div class="line">inoremap &quot; &quot;&quot;&lt;ESC&gt;i</div><div class="line">inoremap ( ()&lt;ESC&gt;i</div><div class="line">inoremap [ []&lt;ESC&gt;i</div><div class="line">inoremap &lt; &lt;&gt;&lt;ESC&gt;i</div><div class="line">inoremap &#123; &#123;&#125;&lt;ESC&gt;i</div><div class="line">set guifont=Bitstream_Vera_Sans_Mono:h10:cANSI</div></pre></td></tr></table></figure></p><p>好了现在使用编辑器就有那种花花绿绿的感觉了，这是我写的一个perl程序：<br><img src="http://oy0a9ohwa.bkt.clouddn.com/blog/171018/9AdKI49D5I.jpg" alt="mark"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;做生信要写代码，写代码就需要编辑器，在linux系统下有一款编辑器不能被忽略，就是VIM，江湖人称编辑器之神。当然，在一堆程序员里面千万不要讨论语言的好坏，也不能突然冒一句perl是世界上最好的脚本语言，不能，千万不能，要不然死的很难看。&lt;/p&gt;
+&lt;p&gt;所以讨论编辑器时也不能随便说哪个最好，人们常说vim是编辑器之神，继而又说他的对手emacs是神的编辑器。绕来绕去就是为了一个名分，所谓树争一身皮，编辑器争一口气。&lt;br&gt;VIM用好了以后的状态是这样子的：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;写过程序的人都知道，编程的时候双手大部分时间都放在键盘上，或编码、或插入、或移动、或定位、或查找，这种连续操作的时间和频率远远大于阅读、翻页、设置字体、摆弄样式等文案工作，而二者往往产生很多停顿和间隙，而编程时的停顿是非常影响编程效率的，所以 Vim 的设计理念就是通过模式的转换、命令的组合和不计其数的插件，保证程序员在编程的过程中，双手尽可能保留在键盘中央的区域，并且，&lt;strong&gt;不需要鼠标&lt;/strong&gt;。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="生物信息" scheme="http://guoshipeng.com/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF/"/>
+    
+    
+      <category term="编辑器" scheme="http://guoshipeng.com/tags/%E7%BC%96%E8%BE%91%E5%99%A8/"/>
+    
+      <category term="VIM" scheme="http://guoshipeng.com/tags/VIM/"/>
     
   </entry>
   
