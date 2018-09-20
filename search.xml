@@ -195,8 +195,8 @@
         <category>生物信息</category>
       </categories>
       <tags>
-        <tag>字符串</tag>
         <tag>Perl</tag>
+        <tag>字符串</tag>
       </tags>
   </entry>
   <entry>
@@ -207,8 +207,8 @@
         <category>生物信息</category>
       </categories>
       <tags>
-        <tag>数据库</tag>
         <tag>TCGA</tag>
+        <tag>数据库</tag>
         <tag>GEPIA</tag>
       </tags>
   </entry>
@@ -259,8 +259,8 @@
         <category>生物信息</category>
       </categories>
       <tags>
-        <tag>数据库</tag>
         <tag>TCGA</tag>
+        <tag>数据库</tag>
       </tags>
   </entry>
   <entry>
@@ -282,8 +282,8 @@
         <category>生物信息</category>
       </categories>
       <tags>
-        <tag>机器学习</tag>
         <tag>资源</tag>
+        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -294,8 +294,8 @@
         <category>生物信息</category>
       </categories>
       <tags>
-        <tag>资源</tag>
         <tag>R</tag>
+        <tag>资源</tag>
       </tags>
   </entry>
 </search>
