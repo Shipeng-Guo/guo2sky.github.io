@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://guoshipeng.com/"/>
-  <updated>2017-12-01T13:38:56.000Z</updated>
+  <updated>2018-09-20T04:04:25.536Z</updated>
   <id>http://guoshipeng.com/</id>
   
   <author>
@@ -21,9 +21,17 @@
     <link href="http://guoshipeng.com/2017/12/01/26-easyTCGA/"/>
     <id>http://guoshipeng.com/2017/12/01/26-easyTCGA/</id>
     <published>2017-12-01T13:38:54.000Z</published>
-    <updated>2017-12-01T13:38:56.000Z</updated>
+    <updated>2018-09-20T04:04:25.536Z</updated>
+    
+    <content type="html"><![CDATA[<p>这是DataCamp 的联合创始人 Martijn Theuwissen写的7步从零开始学习R，里面汇集了从0到高手需要的大部分资料，全部都是英文，并且给出了每个资源的链接。假如你的时间有限，这一篇一定要看。</p>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;p&gt;这是DataCamp 的联合创始人 Martijn Theuwissen写的7步从零开始学习R，里面汇集了从0到高手需要的大部分资料，全部都是英文，并且给出了每个资源的链接。假如你的时间有限，这一篇一定要看。&lt;/p&gt;
+
+      
     
     </summary>
     
@@ -501,9 +509,9 @@
       <category term="生物信息" scheme="http://guoshipeng.com/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF/"/>
     
     
-      <category term="TCGA" scheme="http://guoshipeng.com/tags/TCGA/"/>
-    
       <category term="数据库" scheme="http://guoshipeng.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+      <category term="TCGA" scheme="http://guoshipeng.com/tags/TCGA/"/>
     
       <category term="GEPIA" scheme="http://guoshipeng.com/tags/GEPIA/"/>
     
